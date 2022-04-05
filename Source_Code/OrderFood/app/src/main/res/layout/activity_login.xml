@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".Processer.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -19,6 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/view_background"
@@ -67,33 +68,43 @@
             android:id="@+id/ic_facebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
             android:backgroundTint="@color/white"
             android:elevation="35dp"
             android:src="@drawable/facebook"
-            android:layout_marginRight="15dp"
-            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/ic_google"
+            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_pager"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/view_pager" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/ic_instagram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:backgroundTint="@color/white"
             android:elevation="35dp"
             android:src="@drawable/instagram"
-            app:layout_constraintHorizontal_bias="0"
-            android:layout_marginLeft="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@id/ic_google"
             app:layout_constraintTop_toBottomOf="@+id/view_pager" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="320dp"
+        android:layout_height="120dp"
+        android:src="@drawable/title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
