@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.example.orderfood.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
 
     }
 }

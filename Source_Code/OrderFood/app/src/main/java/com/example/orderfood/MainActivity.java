@@ -13,7 +13,7 @@ import android.widget.EditText;
 import com.example.orderfood.Processer.DashboardActivity;
 import com.example.orderfood.Processer.LoginActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
 
     Button btn_continue;
 
