@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderFood">
         <activity
+            android:name=".Admin.AdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".Processer.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Processer.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Processer.LoginActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

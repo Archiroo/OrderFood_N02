@@ -13,20 +13,20 @@ public class DBhelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE users (username TEXT primary key, password TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE tb_users(phoneNumber TEXT PRIMARY KEY, passWord TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("drop Table if exists users");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tb_users");
     }
 
-    public Boolean insertData(String username, String password){
+    public Boolean insertData(String phoneNumber, String passWord){
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("username",username);
-        contentValues.put("password",password);
-        long result = myDB.insert("users", null, contentValues);
+        contentValues.put("phoneNumber",phoneNumber);
+        contentValues.put("passWord",passWord);
+        long result = myDB.insert("tb_users", null, contentValues);
         if(result==-1){
             return false;
         }else{
@@ -34,9 +34,9 @@ public class DBhelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean checkUsername(String username){
+    public Boolean checkUsername(String phoneNumber){
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor cs = myDB.rawQuery("SELECT * From users WHERE username=? ", new String[]{username});
+        Cursor cs = myDB.rawQuery("SELECT * From tb_users WHERE phoneNumber = ? ", new String[]{phoneNumber});
         if(cs.getCount()>0){
             return true;
 
@@ -44,9 +44,9 @@ public class DBhelper extends SQLiteOpenHelper {
             return false;
         }
     }
-    public Boolean checkUserNamePassword(String username, String password){
+    public Boolean checkUserNamePassword(String phoneNumber, String passWord){
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor cs = myDB.rawQuery("SELECT * From users WHERE username=? AND password = ? ", new String[]{username,password});
+        Cursor cs = myDB.rawQuery("SELECT * From tb_users WHERE phoneNumber = ? AND passWord = ? ", new String[]{phoneNumber,passWord});
         if(cs.getCount()>0){
             return true;
 

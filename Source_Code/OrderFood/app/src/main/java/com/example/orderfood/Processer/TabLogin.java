@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.orderfood.Admin.AdminActivity;
 import com.example.orderfood.Database.DBhelper;
 import com.example.orderfood.MainActivity;
 import com.example.orderfood.R;
@@ -35,19 +36,26 @@ public class TabLogin extends Fragment {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userName = login_phoneNumber.getText().toString();
-                String userPhone = login_passWord.getText().toString();
+                String phoneNumber = login_phoneNumber.getText().toString();
+                String passWord = login_passWord.getText().toString();
 
-                if(userName.equals(" ") || userPhone.equals(" ") ){
+                if(phoneNumber.equals(" ") || passWord.equals(" ") ){
                     Toast.makeText(getActivity(), "Vui lòng kiểm tra lại thông tin tài khoản!",Toast.LENGTH_SHORT).show();
                 }else{
-                    boolean check = db.checkUserNamePassword(userName,userPhone);
+                    boolean check = db.checkUserNamePassword(phoneNumber,passWord);
                     if(check == true ){
-                        Toast.makeText(getActivity(), "Đăng nhập thàn công", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        startActivity(intent);
+                        if(phoneNumber.equals("0965269082"))
+                        {
+                            Toast.makeText(getActivity(), "Đăng nhập với tư cách là admin", Toast.LENGTH_SHORT).show();
+                            Intent intent1 = new Intent(getActivity(), AdminActivity.class);
+                            startActivity(intent1);
+                        }
+                        else {
+                            Intent intent2 = new Intent(getActivity(), DashboardActivity.class);
+                            startActivity(intent2);
+                        }
                     }else {
-                        Toast.makeText(getActivity(), "Tài khoản không hợp lệ!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Tài khoản hoặc mật khẩu không chính xác!", Toast.LENGTH_SHORT).show();
                     }
                 }
 

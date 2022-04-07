@@ -17,8 +17,8 @@ import com.example.orderfood.Database.DBhelper;
 import com.example.orderfood.R;
 
 public class TabSignUp extends Fragment {
-    EditText signup_phoneNumber, signup_passWord, signup_confirmPass;
-    Button btn_signin;
+    EditText signup_phoneNumber, signup_passWord, signup_conFirmPass;
+    Button btn_signIn;
     DBhelper db;
 
     @Override
@@ -27,16 +27,16 @@ public class TabSignUp extends Fragment {
 
         signup_phoneNumber = root.findViewById(R.id.signUp_phoneNumber);
         signup_passWord = root.findViewById(R.id.signUp_passWord);
-        signup_confirmPass = root.findViewById(R.id.signUp_conFirmPassWord);
-        btn_signin = root.findViewById(R.id.btn_signUp);
+        signup_conFirmPass = root.findViewById(R.id.signUp_conFirmPassWord);
+        btn_signIn = root.findViewById(R.id.btn_signUp);
         db = new DBhelper(getActivity());
 
-        btn_signin.setOnClickListener(new View.OnClickListener() {
+        btn_signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String signup_phoneNumber1 = signup_phoneNumber.getText().toString();
                 String signup_passWord1 = signup_passWord.getText().toString();
-                String signup_confirmPass1 = signup_confirmPass.getText().toString();
+                String signup_confirmPass1 = signup_conFirmPass.getText().toString();
 
                 if(signup_phoneNumber1.equals("")||signup_passWord1.equals("")||signup_confirmPass1.equals("")){
                     Toast.makeText(getActivity(), "Vui lòng điền đầy đủ thông tin tài khoản !",Toast.LENGTH_SHORT).show();
