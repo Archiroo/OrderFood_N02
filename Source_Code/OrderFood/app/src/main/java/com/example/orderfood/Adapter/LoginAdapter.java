@@ -1,10 +1,13 @@
-package com.example.orderfood.Processer;
+package com.example.orderfood.Adapter;
 
 import android.content.Context;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.orderfood.Activity.TabLogin;
+import com.example.orderfood.Activity.TabSignUp;
 
 public class LoginAdapter extends FragmentPagerAdapter {
     private Context context;

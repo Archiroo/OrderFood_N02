@@ -1,6 +1,5 @@
-package com.example.orderfood.Processer;
+package com.example.orderfood.Activity;
 
-import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.orderfood.Admin.AdminActivity;
 import com.example.orderfood.Database.DBhelper;
-import com.example.orderfood.MainActivity;
 import com.example.orderfood.R;
 
 public class TabLogin extends Fragment {
