@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 import com.example.orderfood.Adapter.HomeBanner;
 import com.example.orderfood.Adapter.HomeRecyclerView1Adapter;
 import com.example.orderfood.Adapter.HomeRecyclerView2Adapter;
+import com.example.orderfood.Adapter.HomeRecyclerView3Adapter;
 import com.example.orderfood.Model.HomeRecyclerview1;
 import com.example.orderfood.Model.HomeRecyclerview2;
+import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ImageSlider;
 import com.example.orderfood.R;
 
@@ -32,9 +34,10 @@ public class HomeFragment extends Fragment {
     private HomeBanner homeBanner;
 
     //Đổ dữ liệu lên recyclerview
-    private RecyclerView rcv1_Data, rcv2_Data;
+    private RecyclerView rcv1_Data, rcv2_Data, rcv3_Data;
     private HomeRecyclerView1Adapter rcv1_Adapter;
     private HomeRecyclerView2Adapter rcv2_Adapter;
+    private HomeRecyclerView3Adapter rcv3_Adapter;
 
 
 
@@ -47,6 +50,7 @@ public class HomeFragment extends Fragment {
         circleIndicator = view.findViewById(R.id.home_circleIndicator);
         rcv1_Data = view.findViewById(R.id.home_rcv1);
         rcv2_Data = view.findViewById(R.id.home_rcv2);
+        rcv3_Data = view.findViewById(R.id.home_rcv3);
 
 
 
@@ -87,6 +91,23 @@ public class HomeFragment extends Fragment {
         rcv2_Adapter = new HomeRecyclerView2Adapter(item_rcv2);
         rcv2_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv2_Data.setAdapter(rcv2_Adapter);
+
+
+
+        //Recycleview 3
+        ArrayList<HomeRecyclerview3> item_rcv3 = new ArrayList<>();
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat1,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat2,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat3,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat4,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat5,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat6,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
+
+        //Load
+        rcv3_Data = view.findViewById(R.id.home_rcv3);
+        rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3);
+        rcv3_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        rcv3_Data.setAdapter(rcv3_Adapter);
 
 
         return view;
