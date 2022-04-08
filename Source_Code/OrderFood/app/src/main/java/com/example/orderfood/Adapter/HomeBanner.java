@@ -15,12 +15,12 @@ import com.example.orderfood.R;
 
 import java.util.List;
 
-public class ImageAdapter extends PagerAdapter {
+public class HomeBanner extends PagerAdapter {
     // Xử lý sider image
     private Context homeContext;
     private List<ImageSlider> homeListImage; // đối tượng Image được lấy từ Package Model
 
-    public ImageAdapter(Context homeContext, List<ImageSlider> homeListImage) {
+    public HomeBanner(Context homeContext, List<ImageSlider> homeListImage) {
         this.homeContext = homeContext;
         this.homeListImage = homeListImage;
     }
