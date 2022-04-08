@@ -15,6 +15,7 @@ import com.example.orderfood.Adapter.HomeBanner;
 import com.example.orderfood.Adapter.HomeRecyclerView1Adapter;
 import com.example.orderfood.Adapter.HomeRecyclerView2Adapter;
 import com.example.orderfood.Adapter.HomeRecyclerView3Adapter;
+import com.example.orderfood.Interface.ChangeItemRCV3;
 import com.example.orderfood.Model.HomeRecyclerview1;
 import com.example.orderfood.Model.HomeRecyclerview2;
 import com.example.orderfood.Model.HomeRecyclerview3;
@@ -26,7 +27,7 @@ import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
     // Code xử lý silder image
     private ViewPager viewPager;
@@ -37,7 +38,9 @@ public class HomeFragment extends Fragment {
     private RecyclerView rcv1_Data, rcv2_Data, rcv3_Data;
     private HomeRecyclerView1Adapter rcv1_Adapter;
     private HomeRecyclerView2Adapter rcv2_Adapter;
-    private HomeRecyclerView3Adapter rcv3_Adapter;
+    HomeRecyclerView3Adapter rcv3_Adapter;
+
+    ArrayList<HomeRecyclerview3> item_rcv3;
 
 
 
@@ -72,7 +75,7 @@ public class HomeFragment extends Fragment {
 
         //Load
         rcv1_Data = view.findViewById(R.id.home_rcv1);
-        rcv1_Adapter = new HomeRecyclerView1Adapter(item_rcv1);
+        rcv1_Adapter = new HomeRecyclerView1Adapter(item_rcv1, getActivity(), this);
         rcv1_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv1_Data.setAdapter(rcv1_Adapter);
 
@@ -95,14 +98,13 @@ public class HomeFragment extends Fragment {
 
 
         //Recycleview 3
-        ArrayList<HomeRecyclerview3> item_rcv3 = new ArrayList<>();
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat1,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat2,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat3,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat4,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat5,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat6,"Burger Bò", "Thịt bò nhập khẩu từ Mỹ"));
-
+        item_rcv3 = new ArrayList<>();
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
         //Load
         rcv3_Data = view.findViewById(R.id.home_rcv3);
         rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3);
@@ -123,4 +125,10 @@ public class HomeFragment extends Fragment {
         return list;
     }
 
+    @Override
+    public void ChangItem(int index, ArrayList<HomeRecyclerview3> item) {
+        rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3);
+        rcv3_Adapter.notifyDataSetChanged();
+        rcv3_Data.setAdapter(rcv3_Adapter);
+    }
 }
