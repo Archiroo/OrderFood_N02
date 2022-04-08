@@ -13,7 +13,9 @@ import android.view.ViewGroup;
 
 import com.example.orderfood.Adapter.HomeBanner;
 import com.example.orderfood.Adapter.HomeRecyclerView1Adapter;
+import com.example.orderfood.Adapter.HomeRecyclerView2Adapter;
 import com.example.orderfood.Model.HomeRecyclerview1;
+import com.example.orderfood.Model.HomeRecyclerview2;
 import com.example.orderfood.Model.ImageSlider;
 import com.example.orderfood.R;
 
@@ -30,8 +32,9 @@ public class HomeFragment extends Fragment {
     private HomeBanner homeBanner;
 
     //Đổ dữ liệu lên recyclerview
-    private RecyclerView rcv1_Data;
+    private RecyclerView rcv1_Data, rcv2_Data;
     private HomeRecyclerView1Adapter rcv1_Adapter;
+    private HomeRecyclerView2Adapter rcv2_Adapter;
 
 
 
@@ -39,12 +42,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
 
-
         //Ánh xạ
         viewPager = view.findViewById(R.id.home_imageSilder);
         circleIndicator = view.findViewById(R.id.home_circleIndicator);
         rcv1_Data = view.findViewById(R.id.home_rcv1);
-
+        rcv2_Data = view.findViewById(R.id.home_rcv2);
 
 
 
@@ -64,13 +66,27 @@ public class HomeFragment extends Fragment {
         item_rcv1.add(new HomeRecyclerview1(R.drawable.cat5,"Cocacola"));
         item_rcv1.add(new HomeRecyclerview1(R.drawable.cat6,"Fanta"));
 
+        //Load
         rcv1_Data = view.findViewById(R.id.home_rcv1);
         rcv1_Adapter = new HomeRecyclerView1Adapter(item_rcv1);
         rcv1_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv1_Data.setAdapter(rcv1_Adapter);
 
 
+        //Recycleview 2
+        ArrayList<HomeRecyclerview2> item_rcv2 = new ArrayList<>();
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat1,"Burger Bò", "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat2,"Pizza Cháy", "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat3,"Bread Pate", "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat4,"Chicken Fired", "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat5,"Cocacola", "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat6,"Fanta", "115.000 VNĐ"));
 
+        //Load
+        rcv2_Data = view.findViewById(R.id.home_rcv2);
+        rcv2_Adapter = new HomeRecyclerView2Adapter(item_rcv2);
+        rcv2_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        rcv2_Data.setAdapter(rcv2_Adapter);
 
 
         return view;
@@ -86,16 +102,4 @@ public class HomeFragment extends Fragment {
         return list;
     }
 
-    //Đổ dữ liệu Recycleview1
-    private ArrayList<HomeRecyclerview1> getListRCV1() {
-        List<HomeRecyclerview1> list1 = new ArrayList<>();
-        list1.add(new HomeRecyclerview1(R.drawable.cat1, "Burger"));
-        list1.add(new HomeRecyclerview1(R.drawable.cat2, "Pizza"));
-        list1.add(new HomeRecyclerview1(R.drawable.cat3, "Bread"));
-        list1.add(new HomeRecyclerview1(R.drawable.cat4, "Fried Chicken"));
-        list1.add(new HomeRecyclerview1(R.drawable.cat5, "Cocacola"));
-        list1.add(new HomeRecyclerview1(R.drawable.cat6, "Fanta"));
-
-        return (ArrayList<HomeRecyclerview1>) list1;
-    }
 }

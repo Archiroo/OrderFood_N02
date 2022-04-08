@@ -1,5 +1,6 @@
 package com.example.orderfood.Adapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomeRecyclerView1Holder holder, int position) {
+    public void onBindViewHolder(@NonNull HomeRecyclerView1Holder holder, @SuppressLint("RecyclerView") int position) {
         // Hiển thị dữ liệu lên List
         HomeRecyclerview1 currentItem1 = mList_rcv1.get(position);
         if(currentItem1 == null){

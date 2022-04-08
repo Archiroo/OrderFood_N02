@@ -7,7 +7,6 @@
     tools:context=".Activity.PersonFragment"
     android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
 
 
     <Button

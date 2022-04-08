@@ -121,15 +121,16 @@
                 android:translationY="-30dp" />
         </LinearLayout>
 
-        <EditText
+        <TextView
             android:id="@+id/home_mart"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/item_selected"
-            android:elevation="4dp"
+            android:elevation="3dp"
             android:hint="MART"
             android:layout_marginLeft="10dp"
             android:paddingLeft="20dp"
+            android:layout_marginTop="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textSize="14sp"
@@ -138,8 +139,8 @@
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/home_linearLayout"
-            app:layout_constraintTop_toBottomOf="@+id/home_linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/home_rcv2"
+            app:layout_constraintTop_toBottomOf="@+id/home_rcv2"
             app:layout_constraintVertical_bias="0" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -152,7 +153,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_mart" />
+            app:layout_constraintTop_toBottomOf="@+id/home_contentTitle2" />
 
         <TextView
             android:id="@+id/home_title1"
@@ -161,14 +162,13 @@
             android:text="Trùm Cuối Hà Nội Khao đến 55K"
             app:layout_constraintVertical_bias="0"
             app:layout_constraintHorizontal_bias="0"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_rcv1" />
+            app:layout_constraintTop_toBottomOf="@+id/home_linearLayout" />
 
         <TextView
             android:id="@+id/home_contentTitle1"
@@ -206,14 +206,14 @@
             android:text="Deal Hot Gần Bạn"
             app:layout_constraintVertical_bias="0"
             app:layout_constraintHorizontal_bias="0"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_rcv2" />
+            app:layout_constraintTop_toBottomOf="@+id/home_mart" />
 
         <TextView
             android:id="@+id/home_contentTitle2"
@@ -233,7 +233,7 @@
             app:layout_constraintTop_toBottomOf="@+id/home_title2" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/hom_rcv3"
+            android:id="@+id/home_rcv3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintVertical_bias="0"
@@ -242,7 +242,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_contentTitle2" />
+            app:layout_constraintTop_toBottomOf="@+id/home_rcv1" />
 
 
 
