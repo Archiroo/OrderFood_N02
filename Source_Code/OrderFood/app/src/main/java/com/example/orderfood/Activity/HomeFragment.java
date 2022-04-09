@@ -99,12 +99,6 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Recycleview 3
         item_rcv3 = new ArrayList<>();
-//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
         //Load
         rcv3_Data = view.findViewById(R.id.home_rcv3);
         rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3);

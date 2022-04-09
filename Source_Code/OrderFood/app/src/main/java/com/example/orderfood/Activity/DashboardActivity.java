@@ -48,11 +48,12 @@ public class DashboardActivity extends AppCompatActivity {
                         fragment = new CartFragment();
                         break;
                     case 4:
-                        // giao diện thông tin
                         fragment = new InfoFragment();
+                        break;
                     case 5:
                         // giao diện người dùng
                         fragment = new PersonFragment();
+                        break;
                 }
                 //Load fragment
                 loadFragment(fragment);
