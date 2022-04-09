@@ -298,13 +298,13 @@
 
             <TextView
                 android:id="@+id/detail_imageDetail"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Thịt Bò nhập khẩu từ Mỹ"
                 android:textColor="#888888"
                 android:textSize="14sp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintVertical_bias="0"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -343,15 +343,17 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/detail_rcv1"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detail_title2" />
+            app:layout_constraintTop_toBottomOf="@+id/detail_title2"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

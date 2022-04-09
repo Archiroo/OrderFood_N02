@@ -60,7 +60,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        bottomNavigation.show(3, true); // hiển thị giao diện này trước
+        bottomNavigation.show(1, true); // hiển thị giao diện này trước
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {

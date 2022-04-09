@@ -60,10 +60,11 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
         if(check){
             ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
             // Sử dụng vòng lặp for và setter
-            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "Được nhập khẩu từ Mỹ"));// thiết lập giá trị
-            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 2", "Được nhập khẩu từ Mỹ"));// thiết lập giá trị
-            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 3", "Được nhập khẩu từ Mỹ"));// thiết lập giá trị
-            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 4", "Được nhập khẩu từ Mỹ"));// thiết lập giá trị
+            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng", "115.000 VNĐ", "Rất ngon"));// thiết lập giá trị
+            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng", "115.000 VNĐ", "Rất ngon"));// thiết lập giá trị
+            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng", "115.000 VNĐ", "Rất ngon"));// thiết lập giá trị
+            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng", "115.000 VNĐ", "Rất ngon"));// thiết lập giá trị
+            mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng", "115.000 VNĐ", "Rất ngon"));// thiết lập giá trị
 
             changeItemRCV3.ChangItem(position, mList_rcv3);
 
@@ -79,12 +80,12 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
                 if(position==0){
                     ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 2", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 3", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 4", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 5", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 6", "Thịt bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
 
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }
@@ -93,64 +94,62 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
                     holder.item_selected.setBackgroundResource(R.drawable.item_selected);
 
                     ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }
 
                 else if(position==2){
+
                     ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
 
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }
 
                 else if(position==3){
                     ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
 
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }
 
                 else if(position==4){
                     ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
 
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }
 
                 else if(position==5){
                     ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
+                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
 
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }

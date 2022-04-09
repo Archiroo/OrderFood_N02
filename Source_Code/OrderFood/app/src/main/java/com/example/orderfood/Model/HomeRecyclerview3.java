@@ -3,39 +3,50 @@ package com.example.orderfood.Model;
 import java.io.Serializable;
 
 public class HomeRecyclerview3 implements Serializable {
-    private int image;
+    private int imageFood;
 
-    private String image_name;
+    private String nameFood;
 
-    private String image_details;
+    private String priceFood;
 
-    public HomeRecyclerview3(int image, String image_name, String image_details) {
-        this.image = image;
-        this.image_name = image_name;
-        this.image_details = image_details;
+    private String detailFood;
+
+    public HomeRecyclerview3(int imageFood, String nameFood, String priceFood, String detailFood) {
+        this.imageFood = imageFood;
+        this.nameFood = nameFood;
+        this.priceFood = priceFood;
+        this.detailFood = detailFood;
     }
 
-    public int getImage() {
-        return image;
+    public int getImageFood() {
+        return imageFood;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setImageFood(int imageFood) {
+        this.imageFood = imageFood;
     }
 
-    public String getImage_name() {
-        return image_name;
+    public String getNameFood() {
+        return nameFood;
     }
 
-    public void setImage_name(String image_name) {
-        this.image_name = image_name;
+    public void setNameFood(String nameFood) {
+        this.nameFood = nameFood;
     }
 
-    public String getImage_details() {
-        return image_details;
+    public String getPriceFood() {
+        return priceFood;
     }
 
-    public void setImage_details(String image_details) {
-        this.image_details = image_details;
+    public void setPriceFood(String priceFood) {
+        this.priceFood = priceFood;
+    }
+
+    public String getDetailFood() {
+        return detailFood;
+    }
+
+    public void setDetailFood(String detailFood) {
+        this.detailFood = detailFood;
     }
 }

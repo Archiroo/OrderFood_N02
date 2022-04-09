@@ -82,12 +82,12 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Recycleview 2
         ArrayList<HomeRecyclerview2> item_rcv2 = new ArrayList<>();
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat1,"Burger Bò", "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat2,"Pizza Cháy", "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat3,"Bread Pate", "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat4,"Chicken Fired", "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat5,"Cocacola", "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat6,"Fanta", "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat1,"Burger Bò",  "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat2,"Burger Bò",  "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat3,"Burger Bò",  "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat4,"Burger Bò",  "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat5,"Burger Bò",  "115.000 VNĐ"));
+        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat6,"Burger Bò",  "115.000 VNĐ"));
 
         //Load
         rcv2_Data = view.findViewById(R.id.home_rcv2);
@@ -101,7 +101,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
         item_rcv3 = new ArrayList<>();
         //Load
         rcv3_Data = view.findViewById(R.id.home_rcv3);
-        rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3);
+        rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3, getActivity());
         rcv3_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         rcv3_Data.setAdapter(rcv3_Adapter);
 
@@ -121,8 +121,19 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
     @Override
     public void ChangItem(int index, ArrayList<HomeRecyclerview3> item) {
-        rcv3_Adapter = new HomeRecyclerView3Adapter(item);
+        rcv3_Adapter = new HomeRecyclerView3Adapter(item, getActivity());
         rcv3_Adapter.notifyDataSetChanged();
         rcv3_Data.setAdapter(rcv3_Adapter);
+    }
+
+    //Clear context
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if(rcv3_Adapter != null){
+            rcv3_Adapter.clearContext();
+        }
     }
 }

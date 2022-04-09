@@ -1,7 +1,9 @@
 package com.example.orderfood.Adapter;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.orderfood.Activity.DetailActivity;
 import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.R;
 
@@ -23,8 +26,11 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
     public ArrayList<HomeRecyclerview3> mList_rcv3;
 
-    public HomeRecyclerView3Adapter(ArrayList<HomeRecyclerview3> mList_rcv3) {
+    private Context mContext;
+
+    public HomeRecyclerView3Adapter(ArrayList<HomeRecyclerview3> mList_rcv3, Context mContext) {
         this.mList_rcv3 = mList_rcv3;
+        this.mContext = mContext;
     }
 
     @NonNull
@@ -44,20 +50,31 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
         }
 
         // Khác null thực hiện
-        holder.rcv3_image.setImageResource(currentItem3.getImage());
-        holder.rcv3_name.setText(currentItem3.getImage_name());
-        holder.rcv3_details.setText(currentItem3.getImage_details());
+        holder.rcv3_image.setImageResource(currentItem3.getImageFood());
+        holder.rcv3_name.setText(currentItem3.getNameFood());
+        holder.rcv3_details.setText(currentItem3.getDetailFood());
 
         holder.rcv3_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                onClickGoToDetail(currentItem3);
             }
         });
 
 
     }
 
+    public void clearContext(){
+        mContext = null;
+    }
+
+    private void onClickGoToDetail(HomeRecyclerview3 currentItem3) {
+        Intent intentGoToDetail = new Intent(mContext, DetailActivity.class);
+        Bundle bundleDetail = new Bundle();
+        bundleDetail.putSerializable("objectFood", currentItem3);
+        intentGoToDetail.putExtras(bundleDetail);
+        mContext.startActivity(intentGoToDetail);
+    }
 
 
     @Override
