@@ -90,6 +90,8 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
                 }
 
                 else if(position==1){
+                    holder.item_selected.setBackgroundResource(R.drawable.item_selected);
+
                     ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
                     mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
                     mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "ABC"));
@@ -149,6 +151,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
                     mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
                     mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
                     mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }
             }
@@ -156,7 +159,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
         if(select){
             if (position==0)
-//                holder.item_selected.setBackgroundResource(R.drawable.item_selected);
+                holder.item_selected.setBackgroundResource(R.drawable.item_selected);
 
             select = false;
         }

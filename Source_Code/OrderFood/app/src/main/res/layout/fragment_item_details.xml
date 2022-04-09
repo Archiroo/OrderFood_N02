@@ -281,7 +281,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/detail_imageName" />
 
             <ImageView
-                android:id="@+id/detail_pickImage"
+                android:id="@+id/detail_image"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/cat1"

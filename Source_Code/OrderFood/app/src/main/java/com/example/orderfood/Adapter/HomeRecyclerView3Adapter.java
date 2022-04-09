@@ -1,7 +1,6 @@
 package com.example.orderfood.Adapter;
 
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfood.Model.HomeRecyclerview2;
 import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.R;
 
@@ -22,8 +20,8 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
     public ArrayList<HomeRecyclerview3> mList_rcv3;
 
-    public HomeRecyclerView3Adapter(ArrayList<HomeRecyclerview3> List_rcv3) {
-        this.mList_rcv3 = List_rcv3;
+    public HomeRecyclerView3Adapter(ArrayList<HomeRecyclerview3> mList_rcv3) {
+        this.mList_rcv3 = mList_rcv3;
     }
 
     @NonNull
@@ -37,7 +35,7 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
     @Override
     public void onBindViewHolder(@NonNull HomeRecyclerView3Holder holder, int position) {
 
-        HomeRecyclerview3 currentItem3 = mList_rcv3.get(position);
+        final HomeRecyclerview3 currentItem3 = mList_rcv3.get(position);
         if(currentItem3 == null){
             return;
         }
@@ -47,9 +45,17 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
         holder.rcv3_name.setText(currentItem3.getImage_name());
         holder.rcv3_details.setText(currentItem3.getImage_details());
 
+        holder.rcv3_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -64,14 +70,15 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
         public ImageView rcv3_image;
         public TextView rcv3_name;
         public TextView rcv3_details;
-        public ConstraintLayout recv3_layout;
+        public ConstraintLayout rcv3_layout;
 
         public HomeRecyclerView3Holder(@NonNull View itemView) {
             super(itemView);
             rcv3_image = itemView.findViewById(R.id.home_rcv3_image);
             rcv3_name = itemView.findViewById(R.id.home_rcv3_name);
             rcv3_details = itemView.findViewById(R.id.home_rcv3_details);
-            recv3_layout = itemView.findViewById(R.id.home_rvc3_layoutItem);
+            rcv3_layout = itemView.findViewById(R.id.home_rvc3_layoutItem);
+
         }
     }
 }

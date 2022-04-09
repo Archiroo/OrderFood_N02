@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
     private RecyclerView rcv1_Data, rcv2_Data, rcv3_Data;
     private HomeRecyclerView1Adapter rcv1_Adapter;
     private HomeRecyclerView2Adapter rcv2_Adapter;
-    HomeRecyclerView3Adapter rcv3_Adapter;
+    private HomeRecyclerView3Adapter rcv3_Adapter;
 
     ArrayList<HomeRecyclerview3> item_rcv3;
 
@@ -99,12 +99,12 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Recycleview 3
         item_rcv3 = new ArrayList<>();
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
-        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
+//        item_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "Thịt bò được nhập khẩu từ Mỹ"));
         //Load
         rcv3_Data = view.findViewById(R.id.home_rcv3);
         rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3);
@@ -127,7 +127,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
     @Override
     public void ChangItem(int index, ArrayList<HomeRecyclerview3> item) {
-        rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3);
+        rcv3_Adapter = new HomeRecyclerView3Adapter(item);
         rcv3_Adapter.notifyDataSetChanged();
         rcv3_Data.setAdapter(rcv3_Adapter);
     }

@@ -1,6 +1,8 @@
 package com.example.orderfood.Model;
 
-public class HomeRecyclerview3 {
+import java.io.Serializable;
+
+public class HomeRecyclerview3 implements Serializable {
     private int image;
 
     private String image_name;

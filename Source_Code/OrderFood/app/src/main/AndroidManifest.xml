@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderFood">
         <activity
-            android:name=".Activity.ItemDetailsFragment"
-            android:exported="false" />
-        <activity
             android:name=".Admin.AdminActivity"
             android:exported="false" />
         <activity
