@@ -15,7 +15,7 @@ import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class NotificationRecyclerView1Adapter extends RecyclerView.Adapter<NotificationRecyclerView1Adapter.NotificationRecyclerViewHolder> {
+public class NotificationRecyclerView1Adapter extends RecyclerView.Adapter<NotificationRecyclerView1Adapter.NotificationRecyclerView1Holder> {
 
     private ArrayList<Notification_Recyclerview1> mListNotification;
 
@@ -25,14 +25,14 @@ public class NotificationRecyclerView1Adapter extends RecyclerView.Adapter<Notif
 
     @NonNull
     @Override
-    public NotificationRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NotificationRecyclerView1Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_rcv1,parent, false);
 
-        return new NotificationRecyclerViewHolder(view);
+        return new NotificationRecyclerView1Holder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NotificationRecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NotificationRecyclerView1Holder holder, int position) {
         Notification_Recyclerview1 notification_rcv1 = mListNotification.get(position);
         if (notification_rcv1 == null){
             return;
@@ -52,13 +52,13 @@ public class NotificationRecyclerView1Adapter extends RecyclerView.Adapter<Notif
         return 0;
     }
 
-    public class NotificationRecyclerViewHolder extends RecyclerView.ViewHolder{
+    public class NotificationRecyclerView1Holder extends RecyclerView.ViewHolder{
 
         private TextView nameStore;
         private TextView content;
         private ImageView imageStore;
 
-        public NotificationRecyclerViewHolder(@NonNull View itemView) {
+        public NotificationRecyclerView1Holder(@NonNull View itemView) {
             super(itemView);
 
             nameStore = itemView.findViewById(R.id.notification_nameStore);
