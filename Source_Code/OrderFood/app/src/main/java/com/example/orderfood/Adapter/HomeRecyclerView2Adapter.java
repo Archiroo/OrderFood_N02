@@ -1,5 +1,8 @@
 package com.example.orderfood.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.orderfood.Activity.ItemRecyclerview2Activity;
 import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.R;
 
@@ -19,8 +23,11 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
     private ArrayList<HomeRecyclerview3> mList_rcv;
 
-    public HomeRecyclerView2Adapter(ArrayList<HomeRecyclerview3> mList_rcv2) {
+    private Context mContextt;
+
+    public HomeRecyclerView2Adapter(Context mContextt, ArrayList<HomeRecyclerview3> mList_rcv2) {
         this.mList_rcv = mList_rcv2;
+        this.mContextt = mContextt;
     }
 
     @NonNull
@@ -47,7 +54,22 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
         holder.rcv2_name.setText(currentItem.getNameFood());
         holder.rcv2_price.setText(currentItem.getPriceFood());
 
+        holder.item_select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickGoToItemRCV2(currentItem);
+            }
+        });
 
+
+    }
+
+    private void onClickGoToItemRCV2(HomeRecyclerview3 currentItem) {
+        Intent itentGotoItem_rcv2 = new Intent(mContextt, ItemRecyclerview2Activity.class);
+        Bundle bundleItem_rcv2 = new Bundle();
+        bundleItem_rcv2.putSerializable("item_rcv2", currentItem);
+        itentGotoItem_rcv2.putExtras(bundleItem_rcv2);
+        mContextt.startActivity(itentGotoItem_rcv2);
     }
 
     @Override
@@ -56,6 +78,11 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
             return mList_rcv.size();
         }
         return 0;
+    }
+
+
+    public void clearContext(){
+        mContextt = null;
     }
 
     public class HomeRecyclerView2Holder extends RecyclerView.ViewHolder{

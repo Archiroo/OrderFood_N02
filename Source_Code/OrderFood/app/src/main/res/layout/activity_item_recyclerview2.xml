@@ -198,7 +198,7 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginRight="12dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
             android:src="@drawable/ic_minus"
             app:layout_constraintBottom_toTopOf="@+id/btn_rcv2_addCart"
             app:layout_constraintEnd_toEndOf="@+id/btn_rcv2_addCart"
@@ -219,7 +219,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1"
+            app:layout_constraintVertical_bias="0.9"
             app:layout_constraintWidth_percent="0.9" />
 
         <TextView

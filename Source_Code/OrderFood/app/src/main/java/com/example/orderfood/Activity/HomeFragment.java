@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Load
         rcv2_Data = view.findViewById(R.id.home_rcv2);
-        rcv2_Adapter = new HomeRecyclerView2Adapter(item_rcv2);
+        rcv2_Adapter = new HomeRecyclerView2Adapter(getActivity(), item_rcv2);
         rcv2_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv2_Data.setAdapter(rcv2_Adapter);
 
@@ -133,6 +133,10 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         if(rcv3_Adapter != null){
             rcv3_Adapter.clearContext();
+        }
+
+        if (rcv2_Adapter != null){
+            rcv2_Adapter.clearContext();
         }
     }
 }
