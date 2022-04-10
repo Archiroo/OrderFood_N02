@@ -17,7 +17,6 @@ import com.example.orderfood.Adapter.HomeRecyclerView2Adapter;
 import com.example.orderfood.Adapter.HomeRecyclerView3Adapter;
 import com.example.orderfood.Interface.ChangeItemRCV3;
 import com.example.orderfood.Model.HomeRecyclerview1;
-import com.example.orderfood.Model.HomeRecyclerview2;
 import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ImageSlider;
 import com.example.orderfood.R;
@@ -81,13 +80,13 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
 
         //Recycleview 2
-        ArrayList<HomeRecyclerview2> item_rcv2 = new ArrayList<>();
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat1,"Burger Bò",  "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat2,"Burger Bò",  "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat3,"Burger Bò",  "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat4,"Burger Bò",  "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat5,"Burger Bò",  "115.000 VNĐ"));
-        item_rcv2.add(new HomeRecyclerview2(R.drawable.cat6,"Burger Bò",  "115.000 VNĐ"));
+        ArrayList<HomeRecyclerview3> item_rcv2 = new ArrayList<>();
+        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat1, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
+        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat2, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
+        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat3, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
+        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat4, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
+        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat5, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
+        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat6, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
 
         //Load
         rcv2_Data = view.findViewById(R.id.home_rcv2);

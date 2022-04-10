@@ -10,17 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfood.Model.HomeRecyclerview2;
+import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
 public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerView2Adapter.HomeRecyclerView2Holder> {
 
-    private ArrayList<HomeRecyclerview2> mList_rcv2;
+    private ArrayList<HomeRecyclerview3> mList_rcv;
 
-    public HomeRecyclerView2Adapter(ArrayList<HomeRecyclerview2> mList_rcv2) {
-        this.mList_rcv2 = mList_rcv2;
+    public HomeRecyclerView2Adapter(ArrayList<HomeRecyclerview3> mList_rcv2) {
+        this.mList_rcv = mList_rcv2;
     }
 
     @NonNull
@@ -37,22 +37,23 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
     public void onBindViewHolder(@NonNull HomeRecyclerView2Holder holder, int position) {
 
         // Hiển thị dữ liệu lên List
-        HomeRecyclerview2 currentItem2 = mList_rcv2.get(position);
-        if(currentItem2 == null){
+        HomeRecyclerview3 currentItem = mList_rcv.get(position);
+        if(currentItem == null){
             return;
         }
 
         // Khác null thực hiện
-        holder.rcv2_image.setImageResource(currentItem2.getImage());
-        holder.rcv2_name.setText(currentItem2.getImage_name());
-        holder.rcv2_price.setText(currentItem2.getImage_price());
+        holder.rcv2_image.setImageResource(currentItem.getImageFood());
+        holder.rcv2_name.setText(currentItem.getNameFood());
+        holder.rcv2_price.setText(currentItem.getPriceFood());
+
 
     }
 
     @Override
     public int getItemCount() {
-        if(mList_rcv2 != null){
-            return mList_rcv2.size();
+        if(mList_rcv != null){
+            return mList_rcv.size();
         }
         return 0;
     }

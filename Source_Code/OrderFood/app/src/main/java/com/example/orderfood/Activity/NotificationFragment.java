@@ -11,10 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.orderfood.Adapter.HomeRecyclerView2Adapter;
 import com.example.orderfood.Adapter.NotificationRecyclerView1Adapter;
 import com.example.orderfood.Adapter.NotificationRecyclerView2Adapter;
-import com.example.orderfood.Model.HomeRecyclerview2;
 import com.example.orderfood.Model.Notification_Recyclerview1;
 import com.example.orderfood.Model.Notification_Recyclerview2;
 import com.example.orderfood.R;
