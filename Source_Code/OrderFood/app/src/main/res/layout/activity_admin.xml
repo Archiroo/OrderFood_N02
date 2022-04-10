@@ -36,9 +36,8 @@
 
     <EditText
         android:id="@+id/admin_nameFood"
-        android:layout_width="230dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:text="Tên món ăn"
         android:textColor="#999999"
         android:textSize="20sp"
@@ -51,7 +50,7 @@
 
     <EditText
         android:id="@+id/admin_detailFood"
-        android:layout_width="230dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Mô tả món ăn"
@@ -66,7 +65,7 @@
 
     <EditText
         android:id="@+id/admin_priceFood"
-        android:layout_width="230dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Giá tiền"
         app:layout_constraintVertical_bias="0"
@@ -142,21 +141,21 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/admin_rcv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/admin_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/home_rcv2_background"
         android:fontFamily="sans-serif"
         android:paddingStart="20dp"
@@ -164,17 +163,15 @@
         android:paddingRight="20dp"
         android:paddingBottom="15dp"
         android:text="Đăng xuất"
-        android:textColor="#777777"
+        android:textColor="#CC704B"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_updateFood"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/admin_rcv" />
+        app:layout_constraintTop_toBottomOf="@+id/admin_rcv"
+        app:layout_constraintVertical_bias="1" />
 
 
 

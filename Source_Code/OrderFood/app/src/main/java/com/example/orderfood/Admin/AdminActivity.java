@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.pm.ActivityInfoCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
@@ -20,10 +21,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.orderfood.Activity.LoginActivity;
+import com.example.orderfood.Adapter.AdminRecyclerViewAdapter;
+import com.example.orderfood.Adapter.HomeRecyclerView1Adapter;
+import com.example.orderfood.Adapter.HomeRecyclerView2Adapter;
+import com.example.orderfood.Adapter.HomeRecyclerView3Adapter;
+import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.R;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class AdminActivity extends AppCompatActivity {
 
@@ -35,9 +42,11 @@ public class AdminActivity extends AppCompatActivity {
     private TextView priceFood;
     private RecyclerView admin_rcv;
     private TextView btn_logout;
-
-
     final int CHOOSE_IMAGE = 307;
+
+    private RecyclerView admin_rcv1;
+    private AdminRecyclerViewAdapter admin_rcvAdapter;
+    ArrayList<HomeRecyclerview3> mList_rcv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +85,23 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+        //RecyclerView
+        ArrayList<HomeRecyclerview3> mList_rcv = new ArrayList<HomeRecyclerview3>();
+        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
+        //Load
+        admin_rcv1 = findViewById(R.id.admin_rcv);
+        admin_rcvAdapter = new AdminRecyclerViewAdapter(mList_rcv);
+        admin_rcv1.setLayoutManager(new LinearLayoutManager(AdminActivity.this, LinearLayoutManager.VERTICAL, false));
+        admin_rcv1.setAdapter(admin_rcvAdapter);
     }
 
     @Override
