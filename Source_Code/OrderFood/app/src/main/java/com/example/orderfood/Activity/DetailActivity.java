@@ -57,7 +57,7 @@ public class DetailActivity extends AppCompatActivity {
         btn_goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentGoBack = new Intent(DetailActivity.this, HomeFragment.class);
+                Intent intentGoBack = new Intent(DetailActivity.this, DashboardActivity.class);
                 startActivity(intentGoBack);
 
             }
@@ -65,15 +65,6 @@ public class DetailActivity extends AppCompatActivity {
 
         TextView btn_addCart1 = findViewById(R.id.btn_addCart1);
         btn_addCart1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(DetailActivity.this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        TextView btn_addCart = findViewById(R.id.btn_addCart);
-        btn_addCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(DetailActivity.this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
