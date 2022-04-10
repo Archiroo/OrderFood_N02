@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.orderfood">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +16,7 @@
             android:name=".Activity.ItemRecyclerview2Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.DashboardActivity"
+            android:name=".Admin.AdminActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +28,7 @@
             android:name=".Activity.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.AdminActivity"
+            android:name=".Activity.DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
