@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
     private HomeRecyclerView2Adapter rcv2_Adapter;
     private HomeRecyclerView3Adapter rcv3_Adapter;
 
-    ArrayList<HomeRecyclerview3> item_rcv3;
+    ArrayList<ObjectFood> item_rcv3;
 
     //database
     Cursor cursor = null;
@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Load
         rcv1_Data = view.findViewById(R.id.home_rcv1);
-        rcv1_Adapter = new HomeRecyclerView1Adapter(item_rcv1, getActivity(), this);
+        rcv1_Adapter = new HomeRecyclerView1Adapter(item_rcv1, this, getActivity());
         rcv1_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv1_Data.setAdapter(rcv1_Adapter);
 
@@ -130,7 +130,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
     }
 
     @Override
-    public void ChangItem(int index, ArrayList<HomeRecyclerview3> item) {
+    public void ChangItem(int index, ArrayList<ObjectFood> item) {
         rcv3_Adapter = new HomeRecyclerView3Adapter(item, getActivity());
         rcv3_Adapter.notifyDataSetChanged();
         rcv3_Data.setAdapter(rcv3_Adapter);

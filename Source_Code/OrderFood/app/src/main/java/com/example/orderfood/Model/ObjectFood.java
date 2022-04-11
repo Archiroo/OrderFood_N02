@@ -91,6 +91,11 @@ public class ObjectFood implements Serializable {
         this.priceFood = priceFood;
     }
 
+    public ObjectFood(byte[] imageFood, String nameFood) {
+        this.imageFood = imageFood;
+        this.nameFood = nameFood;
+    }
+
     public ObjectFood(){
 
     }

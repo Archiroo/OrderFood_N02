@@ -3,6 +3,8 @@ package com.example.orderfood.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,18 +20,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderfood.Activity.DetailActivity;
 import com.example.orderfood.Model.HomeRecyclerview3;
+import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
 public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerView3Adapter.HomeRecyclerView3Holder> {
 
-    public ArrayList<HomeRecyclerview3> mList_rcv3;
+    public ArrayList<ObjectFood> mList_rcv;
 
     private Context mContext;
 
-    public HomeRecyclerView3Adapter(ArrayList<HomeRecyclerview3> mList_rcv3, Context mContext) {
-        this.mList_rcv3 = mList_rcv3;
+    public HomeRecyclerView3Adapter(ArrayList<ObjectFood> mList_rcv3, Context mContext) {
+        this.mList_rcv = mList_rcv3;
         this.mContext = mContext;
     }
 
@@ -44,20 +47,21 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
     @Override
     public void onBindViewHolder(@NonNull HomeRecyclerView3Holder holder, int position) {
 
-        final HomeRecyclerview3 currentItem3 = mList_rcv3.get(position);
-        if(currentItem3 == null){
+        final ObjectFood currentItem = mList_rcv.get(position);
+        if(currentItem == null){
             return;
         }
 
         // Khác null thực hiện
-        holder.rcv3_image.setImageResource(currentItem3.getImageFood());
-        holder.rcv3_name.setText(currentItem3.getNameFood());
-        holder.rcv3_details.setText(currentItem3.getDetailFood());
+        Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
+        holder.rcv3_image.setImageBitmap(bitmap);
+        holder.rcv3_name.setText(currentItem.getNameFood());
+        holder.rcv3_details.setText(currentItem.getDetailFood());
 
         holder.rcv3_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickGoToDetail(currentItem3);
+                onClickGoToDetail(currentItem);
             }
         });
 
@@ -68,10 +72,10 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
         mContext = null;
     }
 
-    private void onClickGoToDetail(HomeRecyclerview3 currentItem3) {
+    private void onClickGoToDetail(ObjectFood currentItem) {
         Intent intentGoToDetail = new Intent(mContext, DetailActivity.class);
         Bundle bundleDetail = new Bundle();
-        bundleDetail.putSerializable("objectFood", currentItem3);
+        bundleDetail.putSerializable("objectFood", currentItem);
         intentGoToDetail.putExtras(bundleDetail);
         mContext.startActivity(intentGoToDetail);
     }
@@ -79,8 +83,8 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
     @Override
     public int getItemCount() {
-        if(mList_rcv3 != null){
-            return mList_rcv3.size();
+        if(mList_rcv != null){
+            return mList_rcv.size();
         }
         return 0;
     }
