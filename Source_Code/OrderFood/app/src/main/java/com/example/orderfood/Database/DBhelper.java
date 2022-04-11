@@ -24,6 +24,7 @@ public class DBhelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tb_users");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tb_food");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS tb_cart");
     }
 
     public Boolean insertData(String phoneNumber, String passWord){
@@ -83,4 +84,36 @@ public class DBhelper extends SQLiteOpenHelper {
 
         long insert_tbFood = sqLite_insertFood.insert("tb_food", null, values);
     }
+
+    //Tạo bảng giỏ hàng
+    public void createCart() {
+        SQLiteDatabase sqlite_createCart = this.getWritableDatabase();
+        String createTableCart = "CREATE TABLE tb_cart" +
+                "(CART_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "CART_NAME TEXT," +
+                "CART_PRICE TEXT," +
+                "CART_NUMBER INTEGER DEFAULT 1," +
+                "CART_IMAGE BLOB," +
+                "CART_STATUS INTEGER DEFAULT 1)";
+        sqlite_createCart.execSQL(createTableCart);
+    }
+
+
+    // Xóa nếu tồn tại
+    public void deteleCart(){
+        SQLiteDatabase sqlite_delteCart = this.getWritableDatabase();
+        String deleteTableCart = "DROP TABLE IF EXISTS tb_cart";
+        sqlite_delteCart.execSQL(deleteTableCart);
+    }
+
+    //Thêm dữ liệu vào bảng cart
+    public void insertCart(ObjectFood Ob_Food){
+        SQLiteDatabase sqlite_insertCart = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("CART_NAME", Ob_Food.getNameFood());
+        values.put("CART_PRICE", Ob_Food.getPriceFood());
+        values.put("CART_IMAGE", Ob_Food.getImageFood());
+        long insert_tbCart = sqlite_insertCart.insert("tb_cart", null, values);
+    }
+
 }

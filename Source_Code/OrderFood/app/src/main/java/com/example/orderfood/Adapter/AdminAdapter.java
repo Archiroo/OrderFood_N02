@@ -1,5 +1,9 @@
 package com.example.orderfood.Adapter;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +14,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderfood.Model.HomeRecyclerview3;
+import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class AdminRecyclerViewAdapter extends RecyclerView.Adapter<AdminRecyclerViewAdapter.AdminRecyclerViewHolder>{
+public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.AdminRecyclerViewHolder>{
 
-    ArrayList<HomeRecyclerview3> mList_rcv;
+    ArrayList<ObjectFood> mList_rcv;
 
-    public AdminRecyclerViewAdapter(ArrayList<HomeRecyclerview3> mList_rcv) {
+    public AdminAdapter(ArrayList<ObjectFood> mList_rcv) {
         this.mList_rcv = mList_rcv;
     }
 
@@ -29,19 +32,20 @@ public class AdminRecyclerViewAdapter extends RecyclerView.Adapter<AdminRecycler
     public AdminRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_rcv_item, parent, false);
 
-        return new AdminRecyclerViewAdapter.AdminRecyclerViewHolder(view);
+        return new AdminAdapter.AdminRecyclerViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AdminRecyclerViewHolder holder, int position) {
 
-        HomeRecyclerview3 currentItem = mList_rcv.get(position);
+        ObjectFood currentItem = mList_rcv.get(position);
         if(currentItem == null){
             return;
         }
 
         // Khác null thực hiện
-        holder.imageFood.setImageResource(currentItem.getImageFood());
+        Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
+        holder.imageFood.setImageBitmap(bitmap);
         holder.nameFood.setText(currentItem.getNameFood());
         holder.detailFood.setText(currentItem.getDetailFood());
         holder.priceFood.setText(currentItem.getPriceFood());
@@ -67,7 +71,7 @@ public class AdminRecyclerViewAdapter extends RecyclerView.Adapter<AdminRecycler
         public AdminRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageFood = itemView.findViewById(R.id.admin_imageFood);
+            imageFood = itemView.findViewById(R.id.admin_imageFoodd);
             nameFood = itemView.findViewById(R.id.admin_item_nameFood);
             detailFood = itemView.findViewById(R.id.admin_item_detail);
             priceFood = itemView.findViewById(R.id.admin_item_priceFood);

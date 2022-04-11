@@ -77,7 +77,7 @@
             app:layout_constraintTop_toTopOf="@+id/admin_item_priceFood" />
 
         <ImageView
-            android:id="@+id/admin_imageFood"
+            android:id="@+id/admin_imageFoodd"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:padding="10dp"

@@ -2,6 +2,8 @@ package com.example.orderfood.Adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,10 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
     private ArrayList<HomeRecyclerview1> mList_rcv1;
     int row_index = -1;
+
+    //Sử dụng database
+    SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
+    Cursor cursor = null;
 
     //
     ChangeItemRCV3 changeItemRCV3;
