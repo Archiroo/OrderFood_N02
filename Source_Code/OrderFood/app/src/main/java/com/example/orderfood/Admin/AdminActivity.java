@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
@@ -47,7 +48,7 @@ public class AdminActivity extends AppCompatActivity {
     byte[] imageFood;
 
 
-    private RecyclerView admin_rcv1;
+    private RecyclerView admin_rcv;
     private AdminAdapter admin_rcvAdapter;
     ArrayList<ObjectFood> mList_rcv;
 
@@ -150,6 +151,11 @@ public class AdminActivity extends AppCompatActivity {
             byte[] db_imageFood = cursor.getBlob(4);
             item_Food.add(new ObjectFood(db_imageFood, db_nameFood, db_price, db_detail));
         }
+
+        admin_rcv = findViewById(R.id.admin_rcv);
+        admin_rcvAdapter = new AdminAdapter(item_Food);
+        admin_rcv.setLayoutManager(new LinearLayoutManager(AdminActivity.this, LinearLayoutManager.VERTICAL, false));
+        admin_rcv.setAdapter(admin_rcvAdapter);
     }
 
     @Override
