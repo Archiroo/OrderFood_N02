@@ -76,7 +76,6 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
             public void onClick(View view) {
                 row_index = position;
                 notifyDataSetChanged();
-
                 if(position==0){
                     ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
                     String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Burger%'";
@@ -93,69 +92,86 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
                     changeItemRCV3.ChangItem(position, mList_rcv3);
                 }
 
-//                else if(position==1){
-//                    holder.item_selected.setBackgroundResource(R.drawable.item_selected);
-//
-//                    ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat2, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//
-//                    changeItemRCV3.ChangItem(position, mList_rcv3);
-//                }
-//
-//                else if(position==2){
-//
-//                    ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat3, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//
-//                    changeItemRCV3.ChangItem(position, mList_rcv3);
-//                }
-//
-//                else if(position==3){
-//                    ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat4, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//
-//                    changeItemRCV3.ChangItem(position, mList_rcv3);
-//                }
-//
-//                else if(position==4){
-//                    ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat5, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//
-//                    changeItemRCV3.ChangItem(position, mList_rcv3);
-//                }
-//
-//                else if(position==5){
-//                    ArrayList<HomeRecyclerview3> mList_rcv3 = new ArrayList<HomeRecyclerview3>();
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//                    mList_rcv3.add(new HomeRecyclerview3(R.drawable.cat6, "Burger Bò Nướng 1", "70.000 VNĐ", "Thịt Bò được nhập khẩu từ Mỹ"));
-//
-//                    changeItemRCV3.ChangItem(position, mList_rcv3);
-//                }
+
+                else if(position==1){
+                    ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Pizza%'";
+                    cursor = db.rawQuery(sql, null);
+                    mList_rcv3.clear();
+                    for(int i = 0; i < cursor.getCount(); i++){
+                        cursor.moveToPosition(i);
+                        String name = cursor.getString(1);
+                        String price = cursor.getString(2);
+                        String detail = cursor.getString(3);
+                        byte[] image = cursor.getBlob(4);
+                        mList_rcv3.add(new ObjectFood(image, name, price, detail));
+                    }
+                    changeItemRCV3.ChangItem(position, mList_rcv3);
+                }
+
+                else if(position==2){
+                    ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Com%'";
+                    cursor = db.rawQuery(sql, null);
+                    mList_rcv3.clear();
+                    for(int i = 0; i < cursor.getCount(); i++){
+                        cursor.moveToPosition(i);
+                        String name = cursor.getString(1);
+                        String price = cursor.getString(2);
+                        String detail = cursor.getString(3);
+                        byte[] image = cursor.getBlob(4);
+                        mList_rcv3.add(new ObjectFood(image, name, price, detail));
+                    }
+                    changeItemRCV3.ChangItem(position, mList_rcv3);
+                }
+
+                else if(position==3){
+                    ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Ga%' OR '%ga%'";
+                    cursor = db.rawQuery(sql, null);
+                    mList_rcv3.clear();
+                    for(int i = 0; i < cursor.getCount(); i++){
+                        cursor.moveToPosition(i);
+                        String name = cursor.getString(1);
+                        String price = cursor.getString(2);
+                        String detail = cursor.getString(3);
+                        byte[] image = cursor.getBlob(4);
+                        mList_rcv3.add(new ObjectFood(image, name, price, detail));
+                    }
+                    changeItemRCV3.ChangItem(position, mList_rcv3);
+                }
+
+                else if(position==4){
+                    ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Nuoc%'";
+                    cursor = db.rawQuery(sql, null);
+                    mList_rcv3.clear();
+                    for(int i = 0; i < cursor.getCount(); i++){
+                        cursor.moveToPosition(i);
+                        String name = cursor.getString(1);
+                        String price = cursor.getString(2);
+                        String detail = cursor.getString(3);
+                        byte[] image = cursor.getBlob(4);
+                        mList_rcv3.add(new ObjectFood(image, name, price, detail));
+                    }
+                    changeItemRCV3.ChangItem(position, mList_rcv3);
+                }
+
+                else if(position==5){
+                    ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Combo%'";
+                    cursor = db.rawQuery(sql, null);
+                    mList_rcv3.clear();
+                    for(int i = 0; i < cursor.getCount(); i++){
+                        cursor.moveToPosition(i);
+                        String name = cursor.getString(1);
+                        String price = cursor.getString(2);
+                        String detail = cursor.getString(3);
+                        byte[] image = cursor.getBlob(4);
+                        mList_rcv3.add(new ObjectFood(image, name, price, detail));
+                    }
+                    changeItemRCV3.ChangItem(position, mList_rcv3);
+                }
             }
         });
 
