@@ -122,22 +122,6 @@ public class AdminActivity extends AppCompatActivity {
 
 
 
-        //RecyclerView
-//        ArrayList<HomeRecyclerview3> mList_rcv = new ArrayList<HomeRecyclerview3>();
-//        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
-//        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
-//        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
-//        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
-//        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
-//        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
-//        mList_rcv.add(new HomeRecyclerview3(R.drawable.cat1, "Burger Bò Nướng 1", "115.000 VNĐ", "Rất ngon"));
-//        //Load
-//        admin_rcv1 = findViewById(R.id.admin_rcv);
-//        admin_rcvAdapter = new AdminRecyclerViewAdapter(mList_rcv);
-//        admin_rcv1.setLayoutManager(new LinearLayoutManager(AdminActivity.this, LinearLayoutManager.VERTICAL, false));
-//        admin_rcv1.setAdapter(admin_rcvAdapter);
-
-
 
         ArrayList<ObjectFood> item_Food = new ArrayList<>();
         String sql = "SELECT * FROM tb_food";

@@ -2,6 +2,8 @@ package com.example.orderfood.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,18 +17,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderfood.Activity.ItemRecyclerview2Activity;
 import com.example.orderfood.Model.HomeRecyclerview3;
+import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
 public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerView2Adapter.HomeRecyclerView2Holder> {
 
-    private ArrayList<HomeRecyclerview3> mList_rcv;
+    private ArrayList<ObjectFood> mList_rcv;
 
     private Context mContextt;
 
-    public HomeRecyclerView2Adapter(Context mContextt, ArrayList<HomeRecyclerview3> mList_rcv2) {
-        this.mList_rcv = mList_rcv2;
+    public HomeRecyclerView2Adapter(ArrayList<ObjectFood> mList_rcv, Context mContextt) {
+        this.mList_rcv = mList_rcv;
         this.mContextt = mContextt;
     }
 
@@ -44,13 +47,14 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
     public void onBindViewHolder(@NonNull HomeRecyclerView2Holder holder, int position) {
 
         // Hiển thị dữ liệu lên List
-        HomeRecyclerview3 currentItem = mList_rcv.get(position);
+        ObjectFood currentItem = mList_rcv.get(position);
         if(currentItem == null){
             return;
         }
 
         // Khác null thực hiện
-        holder.rcv2_image.setImageResource(currentItem.getImageFood());
+        Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
+        holder.rcv2_image.setImageBitmap(bitmap);
         holder.rcv2_name.setText(currentItem.getNameFood());
         holder.rcv2_price.setText(currentItem.getPriceFood());
 
@@ -64,7 +68,7 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
     }
 
-    private void onClickGoToItemRCV2(HomeRecyclerview3 currentItem) {
+    private void onClickGoToItemRCV2(ObjectFood currentItem) {
         Intent itentGotoItem_rcv2 = new Intent(mContextt, ItemRecyclerview2Activity.class);
         Bundle bundleItem_rcv2 = new Bundle();
         bundleItem_rcv2.putSerializable("item_rcv2", currentItem);

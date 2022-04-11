@@ -1,5 +1,7 @@
 package com.example.orderfood.Activity;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,6 +21,7 @@ import com.example.orderfood.Interface.ChangeItemRCV3;
 import com.example.orderfood.Model.HomeRecyclerview1;
 import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ImageSlider;
+import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
@@ -40,6 +43,10 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
     private HomeRecyclerView3Adapter rcv3_Adapter;
 
     ArrayList<HomeRecyclerview3> item_rcv3;
+
+    //database
+    Cursor cursor = null;
+    SQLiteDatabase db_orderFood = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
 
 
 
@@ -80,17 +87,21 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
 
         //Recycleview 2
-        ArrayList<HomeRecyclerview3> item_rcv2 = new ArrayList<>();
-        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat1, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
-        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat2, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
-        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat3, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
-        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat4, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
-        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat5, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
-        item_rcv2.add(new HomeRecyclerview3(R.drawable.cat6, "Burger bò nướng", "115 000", "Rất ngon, thơm ngon mời bạn ăn nha"));
+        ArrayList<ObjectFood> item_rcv2 = new ArrayList<>();
+        String sql = "SELECT * FROM tb_food";
+        cursor = db_orderFood.rawQuery(sql, null);
+        item_rcv2.clear();
+        for(int i = 0; i < cursor.getCount(); i++){
+            cursor.moveToPosition(i);
+            String db_nameFood = cursor.getString(1);
+            String db_price = cursor.getString(2);
+            byte[] db_imageFood = cursor.getBlob(4);
+            item_rcv2.add(new ObjectFood(db_imageFood, db_nameFood, db_price));
+        }
 
         //Load
         rcv2_Data = view.findViewById(R.id.home_rcv2);
-        rcv2_Adapter = new HomeRecyclerView2Adapter(getActivity(), item_rcv2);
+        rcv2_Adapter = new HomeRecyclerView2Adapter(item_rcv2, getActivity());
         rcv2_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv2_Data.setAdapter(rcv2_Adapter);
 
