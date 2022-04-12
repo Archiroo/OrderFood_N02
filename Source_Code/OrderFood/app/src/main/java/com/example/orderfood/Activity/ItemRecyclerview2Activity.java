@@ -71,9 +71,7 @@ public class ItemRecyclerview2Activity extends AppCompatActivity {
         imageFood.setImageBitmap(bitmap);
         nameFood.setText(item_rcv2.getNameFood());
         priceFood.setText(item_rcv2.getPriceFood());
-        detailFood.setText(item_rcv2.getDetailFood());
-
-
+        detailFood.setText("Thơm ngon, nóng hổi, vừa thổi vừa ăn");
 
         try{
             db.createCart();

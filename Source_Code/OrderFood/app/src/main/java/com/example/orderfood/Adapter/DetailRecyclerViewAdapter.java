@@ -1,5 +1,7 @@
 package com.example.orderfood.Adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +13,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderfood.Model.HomeRecyclerview3;
+import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
 public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<DetailRecyclerViewAdapter.DetailRecyclerViewHolder>{
 
-    public ArrayList<HomeRecyclerview3> mList_detailItem;
+    public ArrayList<ObjectFood> mList_detailItem;
 
-    public DetailRecyclerViewAdapter(ArrayList<HomeRecyclerview3> mList_detailItem) {
+    public DetailRecyclerViewAdapter(ArrayList<ObjectFood> mList_detailItem) {
         this.mList_detailItem = mList_detailItem;
     }
 
@@ -34,13 +37,14 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<DetailRecycl
     @Override
     public void onBindViewHolder(@NonNull DetailRecyclerViewHolder holder, int position) {
 
-        HomeRecyclerview3 currentItem_detail = mList_detailItem.get(position);
+        ObjectFood currentItem_detail = mList_detailItem.get(position);
         if(currentItem_detail == null){
             return;
         }
 
         // Khác null thực hiện
-        holder.detail_image.setImageResource(currentItem_detail.getImageFood());
+        Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem_detail.getImageFood(), 0, currentItem_detail.getImageFood().length);
+        holder.detail_image.setImageBitmap(bitmap);
         holder.detail_name.setText(currentItem_detail.getNameFood());
         holder.detail_detail.setText(currentItem_detail.getNameFood());
         holder.detail_price.setText(currentItem_detail.getDetailFood());
