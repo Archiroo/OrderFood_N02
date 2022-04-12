@@ -57,7 +57,6 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
         holder.rcv2_image.setImageBitmap(bitmap);
         holder.rcv2_name.setText(currentItem.getNameFood());
         holder.rcv2_price.setText(currentItem.getPriceFood());
-
         holder.item_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -42,15 +42,12 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.AdminRecycle
         if(currentItem == null){
             return;
         }
-
         // Khác null thực hiện
         Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
         holder.imageFood.setImageBitmap(bitmap);
         holder.nameFood.setText(currentItem.getNameFood());
         holder.detailFood.setText(currentItem.getDetailFood());
         holder.priceFood.setText(currentItem.getPriceFood());
-
-
     }
 
     @Override

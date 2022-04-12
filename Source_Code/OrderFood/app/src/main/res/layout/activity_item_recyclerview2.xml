@@ -168,14 +168,14 @@
             android:layout_height="35dp"
             android:layout_marginLeft="20dp"
             android:src="@drawable/ic_plus"
-            app:layout_constraintBottom_toBottomOf="@+id/ic_rcv2_minus_number"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_rcv2_number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toEndOf="@+id/ic_rcv2_minus_number"
-            app:layout_constraintTop_toTopOf="@+id/ic_rcv2_minus_number" />
+            app:layout_constraintStart_toEndOf="@+id/ic_rcv2_number"
+            app:layout_constraintTop_toTopOf="@+id/ic_rcv2_number" />
 
         <TextView
-            android:id="@+id/ic_rcv2_minus_number"
+            android:id="@+id/ic_rcv2_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -243,7 +243,7 @@
             android:layout_marginRight="5dp"
             android:text="307.000"
             android:textColor="#999999"
-            android:textSize="20sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/item_rcv2_vnd"
             app:layout_constraintEnd_toStartOf="@+id/item_rcv2_vnd"
             app:layout_constraintHorizontal_bias="1"
