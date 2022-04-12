@@ -1,13 +1,13 @@
 package com.example.orderfood.Model;
 
-public class Notification_Recyclerview1 {
+public class Notification_rcv {
     private int image;
 
     private String nameStore;
 
     private String content;
 
-    public Notification_Recyclerview1(int image, String nameStore, String content) {
+    public Notification_rcv(int image, String nameStore, String content) {
         this.image = image;
         this.nameStore = nameStore;
         this.content = content;

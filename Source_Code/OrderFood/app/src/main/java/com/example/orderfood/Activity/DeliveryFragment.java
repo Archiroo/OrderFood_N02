@@ -13,14 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.orderfood.Adapter.DeliveryAdapter;
-import com.example.orderfood.Adapter.HomeRecyclerView1Adapter;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class InfoFragment extends Fragment {
+public class DeliveryFragment extends Fragment {
 
     private RecyclerView rcv1_item;
     private DeliveryAdapter delivery_Adapter;

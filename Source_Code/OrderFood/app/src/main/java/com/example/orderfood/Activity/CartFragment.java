@@ -14,14 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
-import com.example.orderfood.Adapter.CartRecyclerViewAdapter;
-import com.example.orderfood.Adapter.HomeRecyclerView1Adapter;
+import com.example.orderfood.Adapter.CartAdapter;
 import com.example.orderfood.Database.DBhelper;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
@@ -30,7 +26,7 @@ import java.util.ArrayList;
 public class CartFragment extends Fragment {
 
     private RecyclerView rcv_cart;
-    private CartRecyclerViewAdapter rcv_cartAdapter;
+    private CartAdapter rcv_cartAdapter;
     Button btn_confirmOrder;
 
     SQLiteDatabase sqLitedb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
@@ -58,7 +54,7 @@ public class CartFragment extends Fragment {
 
         //Hien thi list
         rcv_cart = view.findViewById(R.id.cart_rcv);
-        rcv_cartAdapter = new CartRecyclerViewAdapter(mList_cart, getActivity());
+        rcv_cartAdapter = new CartAdapter(mList_cart, getActivity());
         rcv_cart.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         rcv_cart.setAdapter(rcv_cartAdapter);
         Fragment fragment = null;

@@ -1,7 +1,6 @@
 package com.example.orderfood.Admin;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,7 +13,6 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -26,13 +24,11 @@ import android.widget.Toast;
 import com.example.orderfood.Activity.LoginActivity;
 import com.example.orderfood.Adapter.AdminAdapter;
 import com.example.orderfood.Database.DBhelper;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class AdminActivity extends AppCompatActivity {

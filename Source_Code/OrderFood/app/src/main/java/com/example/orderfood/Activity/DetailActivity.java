@@ -15,9 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.orderfood.Adapter.DetailRecyclerViewAdapter;
+import com.example.orderfood.Adapter.DetailAdapter;
 import com.example.orderfood.Database.DBhelper;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
@@ -27,7 +26,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private ImageView btn_goBack;
     private RecyclerView rcv1_Detail;
-    private DetailRecyclerViewAdapter rcv_detailAdapter;
+    private DetailAdapter rcv_detailAdapter;
 
     //Database
     DBhelper db = new DBhelper(this);
@@ -95,7 +94,7 @@ public class DetailActivity extends AppCompatActivity {
             mList_detail.add(new ObjectFood(image, name, price, detail));
 
             rcv1_Detail = findViewById(R.id.detail_rcv1);
-            rcv_detailAdapter = new DetailRecyclerViewAdapter(mList_detail, this);
+            rcv_detailAdapter = new DetailAdapter(mList_detail, this);
             rcv1_Detail.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
             rcv1_Detail.setAdapter(rcv_detailAdapter);
 

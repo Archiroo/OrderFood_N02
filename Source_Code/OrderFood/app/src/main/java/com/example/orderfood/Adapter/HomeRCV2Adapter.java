@@ -15,20 +15,19 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfood.Activity.ItemRecyclerview2Activity;
-import com.example.orderfood.Model.HomeRecyclerview3;
+import com.example.orderfood.Activity.ItemRCV2;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerView2Adapter.HomeRecyclerView2Holder> {
+public class HomeRCV2Adapter extends RecyclerView.Adapter<HomeRCV2Adapter.HomeRecyclerView2Holder> {
 
     private ArrayList<ObjectFood> mList_rcv;
 
     private Context mContextt;
 
-    public HomeRecyclerView2Adapter(ArrayList<ObjectFood> mList_rcv, Context mContextt) {
+    public HomeRCV2Adapter(ArrayList<ObjectFood> mList_rcv, Context mContextt) {
         this.mList_rcv = mList_rcv;
         this.mContextt = mContextt;
     }
@@ -40,7 +39,7 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
 
 
-        return new HomeRecyclerView2Adapter.HomeRecyclerView2Holder(view);
+        return new HomeRCV2Adapter.HomeRecyclerView2Holder(view);
     }
 
     @Override
@@ -68,7 +67,7 @@ public class HomeRecyclerView2Adapter extends RecyclerView.Adapter<HomeRecyclerV
     }
 
     private void onClickGoToItemRCV2(ObjectFood currentItem) {
-        Intent itentGotoItem_rcv2 = new Intent(mContextt, ItemRecyclerview2Activity.class);
+        Intent itentGotoItem_rcv2 = new Intent(mContextt, ItemRCV2.class);
         Bundle bundleItem_rcv2 = new Bundle();
         bundleItem_rcv2.putSerializable("item_rcv2", currentItem);
         itentGotoItem_rcv2.putExtras(bundleItem_rcv2);

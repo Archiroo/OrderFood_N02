@@ -1,7 +1,6 @@
 package com.example.orderfood.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,11 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfood.Activity.DashboardActivity;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 

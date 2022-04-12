@@ -1,6 +1,5 @@
 package com.example.orderfood.Adapter;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfood.Model.Notification_Recyclerview1;
+import com.example.orderfood.Model.Notification_rcv;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class NotificationRecyclerView1Adapter extends RecyclerView.Adapter<NotificationRecyclerView1Adapter.NotificationRecyclerView1Holder> {
+public class Notification1_Adapter extends RecyclerView.Adapter<Notification1_Adapter.NotificationRecyclerView1Holder> {
 
-    private ArrayList<Notification_Recyclerview1> mListNotification;
+    private ArrayList<Notification_rcv> mListNotification;
 
-    public NotificationRecyclerView1Adapter(ArrayList<Notification_Recyclerview1> mListNotification) {
+    public Notification1_Adapter(ArrayList<Notification_rcv> mListNotification) {
         this.mListNotification = mListNotification;
     }
 
@@ -33,7 +32,7 @@ public class NotificationRecyclerView1Adapter extends RecyclerView.Adapter<Notif
 
     @Override
     public void onBindViewHolder(@NonNull NotificationRecyclerView1Holder holder, int position) {
-        Notification_Recyclerview1 notification_rcv1 = mListNotification.get(position);
+        Notification_rcv notification_rcv1 = mListNotification.get(position);
         if (notification_rcv1 == null){
             return;
         }

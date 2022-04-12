@@ -14,24 +14,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderfood.Activity.DetailActivity;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerView3Adapter.HomeRecyclerView3Holder> {
+public class HomeRCV3Adapter extends RecyclerView.Adapter<HomeRCV3Adapter.HomeRecyclerView3Holder> {
 
     public ArrayList<ObjectFood> mList_rcv;
 
     private Context mContext;
 
-    public HomeRecyclerView3Adapter(ArrayList<ObjectFood> mList_rcv3, Context mContext) {
+    public HomeRCV3Adapter(ArrayList<ObjectFood> mList_rcv3, Context mContext) {
         this.mList_rcv = mList_rcv3;
         this.mContext = mContext;
     }
@@ -41,7 +38,7 @@ public class HomeRecyclerView3Adapter extends RecyclerView.Adapter<HomeRecyclerV
     public HomeRecyclerView3Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_rcv3_item, parent, false);
 
-        return new HomeRecyclerView3Adapter.HomeRecyclerView3Holder(view);
+        return new HomeRCV3Adapter.HomeRecyclerView3Holder(view);
     }
 
     @Override

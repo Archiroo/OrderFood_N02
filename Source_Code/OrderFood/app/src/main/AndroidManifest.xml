@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderFood">
         <activity
-            android:name=".Activity.ItemRecyclerview2Activity"
+            android:name=".Activity.ItemRCV2"
             android:exported="false" />
         <activity
             android:name=".Activity.LoginActivity"

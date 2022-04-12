@@ -42,7 +42,7 @@ public class TabLogin extends Fragment {
                 }else{
                     boolean check = db.checkUserNamePassword(phoneNumber,passWord);
                     if(check == true ){
-                        if(phoneNumber.equals("0965269082"))
+                        if(phoneNumber.equals("0123456789"))
                         {
                             Toast.makeText(getActivity(), "Đăng nhập với tư cách là admin", Toast.LENGTH_SHORT).show();
                             Intent intent1 = new Intent(getActivity(), AdminActivity.class);

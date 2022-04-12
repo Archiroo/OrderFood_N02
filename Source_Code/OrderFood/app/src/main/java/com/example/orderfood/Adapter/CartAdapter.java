@@ -19,19 +19,18 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderfood.Activity.DashboardActivity;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerViewAdapter.CartRecyclerViewHolder>{
+public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartRecyclerViewHolder>{
 
     public ArrayList<ObjectFood> cart_item;
 
     public Context mcontex;
 
-    public CartRecyclerViewAdapter(ArrayList<ObjectFood> cart_item, Context mcontex) {
+    public CartAdapter(ArrayList<ObjectFood> cart_item, Context mcontex) {
         this.cart_item = cart_item;
         this.mcontex = mcontex;
     }
@@ -43,7 +42,7 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
     public CartRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item, parent, false);
 
-        return new CartRecyclerViewAdapter.CartRecyclerViewHolder(view);
+        return new CartAdapter.CartRecyclerViewHolder(view);
     }
 
     @Override

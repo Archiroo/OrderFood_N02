@@ -14,12 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.orderfood.Adapter.HomeBanner;
-import com.example.orderfood.Adapter.HomeRecyclerView1Adapter;
-import com.example.orderfood.Adapter.HomeRecyclerView2Adapter;
-import com.example.orderfood.Adapter.HomeRecyclerView3Adapter;
+import com.example.orderfood.Adapter.HomeRCV1Adapter;
+import com.example.orderfood.Adapter.HomeRCV2Adapter;
+import com.example.orderfood.Adapter.HomeRCV3Adapter;
 import com.example.orderfood.Interface.ChangeItemRCV3;
 import com.example.orderfood.Model.HomeRecyclerview1;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ImageSlider;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
@@ -38,9 +37,9 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
     //Đổ dữ liệu lên recyclerview
     private RecyclerView rcv1_Data, rcv2_Data, rcv3_Data;
-    private HomeRecyclerView1Adapter rcv1_Adapter;
-    private HomeRecyclerView2Adapter rcv2_Adapter;
-    private HomeRecyclerView3Adapter rcv3_Adapter;
+    private HomeRCV1Adapter rcv1_Adapter;
+    private HomeRCV2Adapter rcv2_Adapter;
+    private HomeRCV3Adapter rcv3_Adapter;
 
     ArrayList<ObjectFood> item_rcv3;
 
@@ -81,7 +80,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Load
         rcv1_Data = view.findViewById(R.id.home_rcv1);
-        rcv1_Adapter = new HomeRecyclerView1Adapter(item_rcv1, this, getActivity());
+        rcv1_Adapter = new HomeRCV1Adapter(item_rcv1, this, getActivity());
         rcv1_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv1_Data.setAdapter(rcv1_Adapter);
 
@@ -101,7 +100,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Load
         rcv2_Data = view.findViewById(R.id.home_rcv2);
-        rcv2_Adapter = new HomeRecyclerView2Adapter(item_rcv2, getActivity());
+        rcv2_Adapter = new HomeRCV2Adapter(item_rcv2, getActivity());
         rcv2_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rcv2_Data.setAdapter(rcv2_Adapter);
 
@@ -111,7 +110,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
         item_rcv3 = new ArrayList<>();
         //Load
         rcv3_Data = view.findViewById(R.id.home_rcv3);
-        rcv3_Adapter = new HomeRecyclerView3Adapter(item_rcv3, getActivity());
+        rcv3_Adapter = new HomeRCV3Adapter(item_rcv3, getActivity());
         rcv3_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         rcv3_Data.setAdapter(rcv3_Adapter);
 
@@ -131,7 +130,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
     @Override
     public void ChangItem(int index, ArrayList<ObjectFood> item) {
-        rcv3_Adapter = new HomeRecyclerView3Adapter(item, getActivity());
+        rcv3_Adapter = new HomeRCV3Adapter(item, getActivity());
         rcv3_Adapter.notifyDataSetChanged();
         rcv3_Data.setAdapter(rcv3_Adapter);
     }

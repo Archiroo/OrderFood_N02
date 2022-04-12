@@ -15,11 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.orderfood.Database.DBhelper;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
-public class ItemRecyclerview2Activity extends AppCompatActivity {
+public class ItemRCV2 extends AppCompatActivity {
 
     private ImageView imageFood;
     private ImageView imageMinus;
@@ -55,7 +54,7 @@ public class ItemRecyclerview2Activity extends AppCompatActivity {
         btn_backHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentGoBack = new Intent(ItemRecyclerview2Activity.this , DashboardActivity.class);
+                Intent intentGoBack = new Intent(ItemRCV2.this , DashboardActivity.class);
                 startActivity(intentGoBack);
             }
         });
@@ -91,11 +90,11 @@ public class ItemRecyclerview2Activity extends AppCompatActivity {
                     values.put("CART_NUMBER", Integer.parseInt(numberFood.getText()+""));
                     values.put("CART_IMAGE", item_rcv2.getImageFood());
                     db_orderFood.insert("tb_cart", null, values);
-                    Toast.makeText(ItemRecyclerview2Activity.this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ItemRCV2.this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception exception){
                     exception.printStackTrace();
-                    Toast.makeText(ItemRecyclerview2Activity.this, "Thêm món ăn thất bại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ItemRCV2.this, "Thêm món ăn thất bại", Toast.LENGTH_SHORT).show();
                 }
             }
         });

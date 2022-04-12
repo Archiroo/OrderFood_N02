@@ -9,17 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfood.Model.Notification_Recyclerview1;
-import com.example.orderfood.Model.Notification_Recyclerview2;
+import com.example.orderfood.Model.Notification_rcv;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class NotificationRecyclerView2Adapter extends RecyclerView.Adapter<NotificationRecyclerView2Adapter.NotificationRecyclerView2Holder> {
+public class Notification2_Adapter extends RecyclerView.Adapter<Notification2_Adapter.NotificationRecyclerView2Holder> {
 
-    private ArrayList<Notification_Recyclerview2> mListNotification;
+    private ArrayList<Notification_rcv> mListNotification;
 
-    public NotificationRecyclerView2Adapter(ArrayList<Notification_Recyclerview2> mListNotification) {
+    public Notification2_Adapter(ArrayList<Notification_rcv> mListNotification) {
         this.mListNotification = mListNotification;
     }
 
@@ -28,13 +27,13 @@ public class NotificationRecyclerView2Adapter extends RecyclerView.Adapter<Notif
     public NotificationRecyclerView2Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_rcv2,parent, false);
 
-        return new NotificationRecyclerView2Adapter.NotificationRecyclerView2Holder(view);
+        return new Notification2_Adapter.NotificationRecyclerView2Holder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NotificationRecyclerView2Holder holder, int position) {
 
-        Notification_Recyclerview2 notification_rcv2 = mListNotification.get(position);
+        Notification_rcv notification_rcv2 = mListNotification.get(position);
         if (notification_rcv2 == null){
             return;
         }

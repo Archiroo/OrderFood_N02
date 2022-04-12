@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.orderfood.R;
@@ -48,7 +47,7 @@ public class DashboardActivity extends AppCompatActivity {
                         fragment = new CartFragment();
                         break;
                     case 4:
-                        fragment = new InfoFragment();
+                        fragment = new DeliveryFragment();
                         break;
                     case 5:
                         // giao diện người dùng

@@ -16,19 +16,18 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<DetailRecyclerViewAdapter.DetailRecyclerViewHolder>{
+public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailRecyclerViewHolder>{
 
     public ArrayList<ObjectFood> mList_detailItem;
 
     Context mContext;
 
-    public DetailRecyclerViewAdapter(ArrayList<ObjectFood> mList_detailItem, Context mContext) {
+    public DetailAdapter(ArrayList<ObjectFood> mList_detailItem, Context mContext) {
         this.mList_detailItem = mList_detailItem;
         this.mContext = mContext;
     }
@@ -41,7 +40,7 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<DetailRecycl
     public DetailRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.detail_rcv1_item, parent, false);
 
-        return new DetailRecyclerViewAdapter.DetailRecyclerViewHolder(view);
+        return new DetailAdapter.DetailRecyclerViewHolder(view);
     }
 
     @Override

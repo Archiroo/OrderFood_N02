@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderfood.Interface.ChangeItemRCV3;
 import com.example.orderfood.Model.HomeRecyclerview1;
-import com.example.orderfood.Model.HomeRecyclerview3;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerView1Adapter.HomeRecyclerView1Holder>{
+public class HomeRCV1Adapter extends RecyclerView.Adapter<HomeRCV1Adapter.HomeRecyclerView1Holder>{
 
     private ArrayList<HomeRecyclerview1> mList_rcv1;
     int row_index = -1;
@@ -39,7 +36,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
     boolean check = true;
     boolean select = true;
 
-    public HomeRecyclerView1Adapter(ArrayList<HomeRecyclerview1> mList_rcv1, ChangeItemRCV3 changeItemRCV3, Activity activity) {
+    public HomeRCV1Adapter(ArrayList<HomeRecyclerview1> mList_rcv1, ChangeItemRCV3 changeItemRCV3, Activity activity) {
         this.mList_rcv1 = mList_rcv1;
         this.changeItemRCV3 = changeItemRCV3;
         this.activity = activity;
