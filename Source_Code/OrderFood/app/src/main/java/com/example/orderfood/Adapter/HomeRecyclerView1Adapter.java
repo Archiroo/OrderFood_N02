@@ -95,7 +95,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
                 else if(position==1){
                     ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
-                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Pizza%'";
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%pizza%'";
                     cursor = db.rawQuery(sql, null);
                     mList_rcv3.clear();
                     for(int i = 0; i < cursor.getCount(); i++){
@@ -111,7 +111,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
                 else if(position==2){
                     ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
-                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Com%'";
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%com%'";
                     cursor = db.rawQuery(sql, null);
                     mList_rcv3.clear();
                     for(int i = 0; i < cursor.getCount(); i++){
@@ -127,7 +127,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
                 else if(position==3){
                     ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
-                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Ga%' OR '%ga%'";
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%ga%'";
                     cursor = db.rawQuery(sql, null);
                     mList_rcv3.clear();
                     for(int i = 0; i < cursor.getCount(); i++){
@@ -143,7 +143,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
                 else if(position==4){
                     ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
-                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Nuoc%'";
+                    String sql = "SELECT * FROM tb_food WHERE food_detail LIKE '%nuoc%'";
                     cursor = db.rawQuery(sql, null);
                     mList_rcv3.clear();
                     for(int i = 0; i < cursor.getCount(); i++){
@@ -159,7 +159,7 @@ public class HomeRecyclerView1Adapter extends RecyclerView.Adapter<HomeRecyclerV
 
                 else if(position==5){
                     ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
-                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%Combo%'";
+                    String sql = "SELECT * FROM tb_food WHERE food LIKE '%combo%'";
                     cursor = db.rawQuery(sql, null);
                     mList_rcv3.clear();
                     for(int i = 0; i < cursor.getCount(); i++){

@@ -74,10 +74,10 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
         ArrayList<HomeRecyclerview1> item_rcv1 = new ArrayList<>();
         item_rcv1.add(new HomeRecyclerview1(R.drawable.cat1,"Burger"));
         item_rcv1.add(new HomeRecyclerview1(R.drawable.cat2,"Pizza"));
-        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat3,"Bread"));
-        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat4,"Chicken"));
-        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat5,"Cocacola"));
-        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat6,"Fanta"));
+        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat3,"Cơm"));
+        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat4,"Gà chiên"));
+        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat5,"Đồ uống"));
+        item_rcv1.add(new HomeRecyclerview1(R.drawable.cat6,"Combo"));
 
         //Load
         rcv1_Data = view.findViewById(R.id.home_rcv1);

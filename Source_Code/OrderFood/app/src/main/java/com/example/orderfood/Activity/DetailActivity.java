@@ -63,13 +63,6 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-//        TextView btn_addCart = findViewById(R.id.btn_addCart);
-//        btn_addCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
 
 
 
