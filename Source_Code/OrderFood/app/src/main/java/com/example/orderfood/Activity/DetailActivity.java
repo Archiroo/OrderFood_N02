@@ -95,7 +95,7 @@ public class DetailActivity extends AppCompatActivity {
             mList_detail.add(new ObjectFood(image, name, price, detail));
 
             rcv1_Detail = findViewById(R.id.detail_rcv1);
-            rcv_detailAdapter = new DetailRecyclerViewAdapter(mList_detail);
+            rcv_detailAdapter = new DetailRecyclerViewAdapter(mList_detail, this);
             rcv1_Detail.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
             rcv1_Detail.setAdapter(rcv_detailAdapter);
 

@@ -1,5 +1,8 @@
 package com.example.orderfood.Adapter;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -7,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -22,9 +26,15 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<DetailRecycl
 
     public ArrayList<ObjectFood> mList_detailItem;
 
-    public DetailRecyclerViewAdapter(ArrayList<ObjectFood> mList_detailItem) {
+    Context mContext;
+
+    public DetailRecyclerViewAdapter(ArrayList<ObjectFood> mList_detailItem, Context mContext) {
         this.mList_detailItem = mList_detailItem;
+        this.mContext = mContext;
     }
+
+    SQLiteDatabase sqLitedb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
+
 
     @NonNull
     @Override
@@ -48,6 +58,23 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<DetailRecycl
         holder.detail_name.setText(currentItem_detail.getNameFood());
         holder.detail_detail.setText(currentItem_detail.getNameFood());
         holder.detail_price.setText(currentItem_detail.getDetailFood());
+
+        holder.detail_btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    ContentValues values = new ContentValues();
+                    values.put("cart_name", currentItem_detail.getNameFood());
+                    values.put("cart_price", currentItem_detail.getPriceFood());
+                    values.put("cart_image", currentItem_detail.getImageFood());
+                    sqLitedb.insert("tb_cart", null, values);
+                    Toast.makeText(mContext, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(mContext, "Thêm vào giỏ hàng thất bại", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
