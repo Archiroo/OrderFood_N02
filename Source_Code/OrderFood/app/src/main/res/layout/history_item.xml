@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0" />
 
     <ImageView
-        android:id="@+id/delivery_imageFood"
+        android:id="@+id/history_imageFood"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:padding="5dp"
@@ -69,19 +69,19 @@
         app:layout_constraintTop_toTopOf="@+id/img_background" />
 
     <TextView
-        android:id="@+id/delivery_nameFood"
+        android:id="@+id/history_nameFood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:text="Burger bò nướng"
         android:textColor="#888888"
         android:textSize="20sp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintBottom_toBottomOf="@+id/img_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toEndOf="@+id/img_background"
-        app:layout_constraintTop_toTopOf="@+id/img_background" />
+        app:layout_constraintTop_toTopOf="@+id/img_background"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView5"
@@ -95,11 +95,11 @@
         app:layout_constraintVertical_bias="0"
         app:layout_constraintBottom_toBottomOf="@+id/img_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/delivery_nameFood"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_nameFood" />
+        app:layout_constraintStart_toStartOf="@+id/history_nameFood"
+        app:layout_constraintTop_toBottomOf="@+id/history_nameFood" />
 
     <TextView
-        android:id="@+id/delivery_quantity"
+        android:id="@+id/history_quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="9"
@@ -122,10 +122,10 @@
         android:layout_marginRight="8dp"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintBottom_toBottomOf="@+id/delivery_quantity"
-        app:layout_constraintEnd_toStartOf="@+id/delivery_quantity"
+        app:layout_constraintBottom_toBottomOf="@+id/history_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/history_quantity"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/delivery_quantity" />
+        app:layout_constraintTop_toTopOf="@+id/history_quantity" />
 
     <TextView
         android:id="@+id/textView7"
@@ -150,12 +150,12 @@
         android:textSize="16sp"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="@+id/delivery_quantity"
+        app:layout_constraintEnd_toEndOf="@+id/history_quantity"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="@+id/textView7" />
 
     <TextView
-        android:id="@+id/delivery_totalPrice"
+        android:id="@+id/history_totalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="307 000"
@@ -197,7 +197,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đang giao hàng"
+        android:text="Giao hàng thành công"
         android:textColor="#888888"
         android:textSize="16sp"
         app:layout_constraintHorizontal_bias="0"
@@ -232,7 +232,7 @@
 
 
     <TextView
-        android:id="@+id/btn_danhGia"
+        android:id="@+id/history_danhgiaaa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_admin"

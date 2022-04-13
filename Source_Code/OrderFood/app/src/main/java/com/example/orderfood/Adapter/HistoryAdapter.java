@@ -1,6 +1,5 @@
 package com.example.orderfood.Adapter;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -15,65 +14,61 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.orderfood.Database.DBhelper;
 import com.example.orderfood.Model.ObjectFood;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
 
-public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryHolder> {
+public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryAdapterHolder>{
 
-    private ArrayList<ObjectFood> history_item;
+    public ArrayList<ObjectFood> history_item;
 
     public HistoryAdapter(ArrayList<ObjectFood> history_item) {
         this.history_item = history_item;
     }
 
-    SQLiteDatabase sqLitedb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
-    Cursor cursor = null;
-
     @NonNull
     @Override
-    public HistoryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HistoryAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.history_item, parent, false);
 
-        return new HistoryAdapter.HistoryHolder(view);
+        return new HistoryAdapter.HistoryAdapterHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HistoryAdapterHolder holder, int position) {
 
         ObjectFood currentItem = history_item.get(position);
         if(currentItem == null){
             return;
         }
 
-        // Khác null thực hiện
-        Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
-        holder.history_image.setImageBitmap(bitmap);
+
         holder.history_nameFood.setText(currentItem.getNameFood());
-        holder.history_price.setText(currentItem.getPriceFood());
-        holder.history_quantity.setText(String.valueOf(currentItem.getNumber()));
+        Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
+        holder.history_imageFood.setImageBitmap(bitmap);
+        holder.history_quantity.setText(currentItem.getNameFood());
+        holder.history_totalPrice.setText(currentItem.getNameFood());
 
     }
 
     @Override
     public int getItemCount() {
-        if(history_item != null){
-            return history_item.size();
-        }
         return 0;
     }
 
-    public class HistoryHolder extends RecyclerView.ViewHolder{
+    public class HistoryAdapterHolder extends RecyclerView.ViewHolder{
 
-        public ImageView history_image;
+        public ImageView history_imageFood;
         public TextView history_nameFood, history_quantity;
-        public TextView history_price;
-
-        public HistoryHolder(@NonNull View itemView) {
+        public TextView history_totalPrice;
+        public HistoryAdapterHolder(@NonNull View itemView) {
             super(itemView);
-
-
+            history_imageFood = itemView.findViewById(R.id.history_imageFood);
+            history_nameFood = itemView.findViewById(R.id.history_nameFood);
+            history_quantity = itemView.findViewById(R.id.history_quantity);
+            history_totalPrice = itemView.findViewById(R.id.history_totalPrice);
         }
     }
 }

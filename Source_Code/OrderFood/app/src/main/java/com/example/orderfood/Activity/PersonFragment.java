@@ -20,8 +20,8 @@ import java.util.ArrayList;
 
 public class PersonFragment extends Fragment {
     Button btn_logout;
-    RecyclerView rcv1, rcv2, rcv3;
-    PersonAdapter rcv1_Adapter;
+    private RecyclerView rcv1, rcv2;
+    private PersonAdapter rcv1_Adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_person, container, false);
@@ -32,7 +32,7 @@ public class PersonFragment extends Fragment {
         item_rcv1.add(new Person(R.drawable.ic_key,"Thay đổi mật khẩu"));
         //Load
         rcv1 = view.findViewById(R.id.person_rcv1);
-        rcv1_Adapter = new PersonAdapter(item_rcv1);
+        rcv1_Adapter = new PersonAdapter(item_rcv1, getActivity());
         rcv1.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         rcv1.setAdapter(rcv1_Adapter);
 
@@ -42,7 +42,7 @@ public class PersonFragment extends Fragment {
         item_rcv2.add(new Person(R.drawable.ic_history,"Lịch sử đặt hàng"));
         //Load
         rcv2 = view.findViewById(R.id.person_rcv2);
-        rcv1_Adapter = new PersonAdapter(item_rcv2);
+        rcv1_Adapter = new PersonAdapter(item_rcv2, getActivity());
         rcv2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         rcv2.setAdapter(rcv1_Adapter);
 
@@ -77,6 +77,5 @@ public class PersonFragment extends Fragment {
 //        });
         return view;
     }
-
 
 }

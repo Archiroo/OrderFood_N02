@@ -39,7 +39,7 @@ public class CartFragment extends Fragment {
 
         ObjectFood ob_food = new ObjectFood();
         ArrayList<ObjectFood> mList_cart = new ArrayList<ObjectFood>();
-        String sql = "SELECT * FROM tb_cart WHERE CART_STATUS = 1";
+        String sql = "SELECT * FROM tb_cart";
         cursor = sqLitedb.rawQuery(sql, null);
         mList_cart.clear();
         for(int i = 0; i < cursor.getCount(); i++){
