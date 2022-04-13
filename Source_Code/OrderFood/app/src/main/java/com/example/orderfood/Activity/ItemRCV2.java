@@ -29,6 +29,7 @@ public class ItemRCV2 extends AppCompatActivity {
     private TextView numberFood;
     private ImageView btn_backHome;
     private Button btn_addCart;
+    private TextView item_rcv2_price;
     DBhelper db = new DBhelper(this);
 
     SQLiteDatabase db_orderFood = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
@@ -49,6 +50,7 @@ public class ItemRCV2 extends AppCompatActivity {
         numberFood = findViewById(R.id.ic_rcv2_number);
         imageMinus = findViewById(R.id.ic_rcv2_minus);
         imagePlus = findViewById(R.id.ic_rcv2_plus);
+        item_rcv2_price = findViewById(R.id.item_rcv2_price);
 
         //Quay lai trang chu
         btn_backHome.setOnClickListener(new View.OnClickListener() {
@@ -103,14 +105,18 @@ public class ItemRCV2 extends AppCompatActivity {
 
         // Sự kiện thay đổi số lượng
         numberFood.setText("1");
+        int priceFood = Integer.parseInt(item_rcv2_price.getText().toString());
         imageMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int number1 = Integer.parseInt(numberFood.getText()+"");
-                if(number1>0){
+                int totalPrice = 0;
+                if(number1>1){
                     number1--;
+                    totalPrice = number1 * priceFood;
+                    numberFood.setText(String.valueOf(number1));
+                    item_rcv2_price.setText(String.valueOf(totalPrice));
                 }
-                numberFood.setText(String.valueOf(number1));
             }
         });
 
@@ -118,8 +124,11 @@ public class ItemRCV2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int number1 = Integer.parseInt(numberFood.getText()+"");
+                int totalPrice = 0;
                 number1++;
+                totalPrice = number1 * priceFood;
                 numberFood.setText(String.valueOf(number1));
+                item_rcv2_price.setText(String.valueOf(totalPrice));
             }
         });
     }

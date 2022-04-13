@@ -59,14 +59,21 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartRecyclerVi
         holder.cart_name.setText(currentItem.getNameFood());
         holder.cart_price.setText(currentItem.getPriceFood());
         holder.cart_number.setText(String.valueOf(currentItem.getNumber()));
+
+        int priceFood = Integer.parseInt(holder.cart_price.getText().toString());
         holder.ic_minimus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int number1 = Integer.parseInt(holder.cart_number.getText()+"");
+                int totalPrice = 0;
                 if(number1>1){
                     number1--;
+                    totalPrice = number1 * priceFood;
+                    holder.cart_number.setText(String.valueOf(number1));
+                    holder.cart_price.setText(String.valueOf(totalPrice));
                 }
-                holder.cart_number.setText(String.valueOf(number1));
+
+
                 ContentValues values = new ContentValues();
                 values.put("cart_number", number1);
                 String sql = "cart_id = "+ currentItem.getId()+"";
@@ -78,8 +85,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartRecyclerVi
             @Override
             public void onClick(View view) {
                 int number1 = Integer.parseInt(holder.cart_number.getText()+"");
+                int totalPrice = 0;
                 number1++;
+                totalPrice = number1 * priceFood;
+
                 holder.cart_number.setText(String.valueOf(number1));
+                holder.cart_price.setText(String.valueOf(totalPrice));
+
                 ContentValues values = new ContentValues();
                 values.put("cart_number", number1);
                 String sql = "cart_id = "+ currentItem.getId()+"";
