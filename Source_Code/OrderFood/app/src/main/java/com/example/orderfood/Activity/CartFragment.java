@@ -39,7 +39,7 @@ public class CartFragment extends Fragment {
 
         ObjectFood ob_food = new ObjectFood();
         ArrayList<ObjectFood> mList_cart = new ArrayList<ObjectFood>();
-        String sql = "SELECT * FROM tb_cart";
+        String sql = "SELECT * FROM tb_cart WHERE cart_status = '1' ";
         cursor = sqLitedb.rawQuery(sql, null);
         mList_cart.clear();
         for(int i = 0; i < cursor.getCount(); i++){
@@ -66,7 +66,7 @@ public class CartFragment extends Fragment {
             public void onClick(View view) {
                 ContentValues values = new ContentValues();
                 values.put("cart_status", 2);
-                sqLitedb.update("tb_cart", values, "cart_status = 1", null);
+                sqLitedb.update("tb_cart", values, "CART_STATUS = 1", null);
                 Intent intent = new Intent(getActivity(),DashboardActivity.class);
                 startActivity(intent);
                 Toast.makeText(getActivity(),"Đặt hàng thành công", Toast.LENGTH_SHORT).show();

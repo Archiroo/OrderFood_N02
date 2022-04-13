@@ -13,6 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.orderfood.Adapter.HomeBanner;
@@ -44,6 +45,8 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
     private HomeRCV3Adapter rcv3_Adapter;
     private ImageView btn_search;
 
+    private EditText nameFood;
+
     ArrayList<ObjectFood> item_rcv3;
 
     //database
@@ -63,7 +66,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
         rcv2_Data = view.findViewById(R.id.home_rcv2);
         rcv3_Data = view.findViewById(R.id.home_rcv3);
         btn_search = view.findViewById(R.id.btn_search);
-
+        nameFood = view.findViewById(R.id.home_search);
 
 
         //Banner
@@ -124,6 +127,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
             @Override
             public void onClick(View view) {
                 Intent intentGoToSearch = new Intent(getActivity(), SearchActivity.class);
+                intentGoToSearch.putExtra("nameFood", nameFood.getText().toString());
                 startActivity(intentGoToSearch);
             }
         });
