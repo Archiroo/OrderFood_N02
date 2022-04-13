@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.orderfood.Adapter.PersonAdapter;
 import com.example.orderfood.Model.Person;
 import com.example.orderfood.R;
 
@@ -20,31 +19,9 @@ import java.util.ArrayList;
 
 public class PersonFragment extends Fragment {
     Button btn_logout;
-    private RecyclerView rcv1, rcv2;
-    private PersonAdapter rcv1_Adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_person, container, false);
-
-        //Recycleview 1
-        ArrayList<Person> item_rcv1 = new ArrayList<>();
-        item_rcv1.add(new Person(R.drawable.ic_userprofile,"Chỉnh sửa thông tin cá nhân"));
-        item_rcv1.add(new Person(R.drawable.ic_key,"Thay đổi mật khẩu"));
-        //Load
-        rcv1 = view.findViewById(R.id.person_rcv1);
-        rcv1_Adapter = new PersonAdapter(item_rcv1, getActivity());
-        rcv1.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        rcv1.setAdapter(rcv1_Adapter);
-
-
-        ArrayList<Person> item_rcv2 = new ArrayList<>();
-        item_rcv2.add(new Person(R.drawable.ic_notification,"Chỉnh sửa thông báo"));
-        item_rcv2.add(new Person(R.drawable.ic_history,"Lịch sử đặt hàng"));
-        //Load
-        rcv2 = view.findViewById(R.id.person_rcv2);
-        rcv1_Adapter = new PersonAdapter(item_rcv2, getActivity());
-        rcv2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        rcv2.setAdapter(rcv1_Adapter);
 
 
 //        btn_logout = (Button) view.findViewById(R.id.btn_logout);
