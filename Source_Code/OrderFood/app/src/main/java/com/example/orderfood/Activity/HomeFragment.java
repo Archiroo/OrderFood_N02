@@ -1,5 +1,6 @@
 package com.example.orderfood.Activity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.orderfood.Adapter.HomeBanner;
 import com.example.orderfood.Adapter.HomeRCV1Adapter;
@@ -40,6 +42,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
     private HomeRCV1Adapter rcv1_Adapter;
     private HomeRCV2Adapter rcv2_Adapter;
     private HomeRCV3Adapter rcv3_Adapter;
+    private ImageView btn_search;
 
     ArrayList<ObjectFood> item_rcv3;
 
@@ -59,6 +62,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
         rcv1_Data = view.findViewById(R.id.home_rcv1);
         rcv2_Data = view.findViewById(R.id.home_rcv2);
         rcv3_Data = view.findViewById(R.id.home_rcv3);
+        btn_search = view.findViewById(R.id.btn_search);
 
 
 
@@ -114,6 +118,15 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
         rcv3_Data.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         rcv3_Data.setAdapter(rcv3_Adapter);
 
+
+        //Search
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentGoToSearch = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intentGoToSearch);
+            }
+        });
 
         return view;
     }

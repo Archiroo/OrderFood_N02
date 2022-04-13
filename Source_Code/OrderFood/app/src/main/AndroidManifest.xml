@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderFood">
         <activity
+            android:name=".Activity.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.HistoryActivity"
             android:exported="false" />
         <activity
