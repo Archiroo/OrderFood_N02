@@ -43,8 +43,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryA
         if(currentItem == null){
             return;
         }
-
-
         holder.history_nameFood.setText(currentItem.getNameFood());
         Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
         holder.history_imageFood.setImageBitmap(bitmap);

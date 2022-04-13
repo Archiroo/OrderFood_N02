@@ -16,10 +16,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.orderfood.Adapter.CartAdapter;
+import com.example.orderfood.Adapter.DeliveryAdapter;
 import com.example.orderfood.Adapter.HistoryAdapter;
 import com.example.orderfood.Database.DBhelper;
 import com.example.orderfood.MainActivity;
 import com.example.orderfood.Model.ObjectFood;
+import com.example.orderfood.Model.Person;
 import com.example.orderfood.R;
 
 import java.util.ArrayList;
@@ -28,8 +30,8 @@ public class HistoryActivity extends AppCompatActivity {
 
     private RecyclerView rcv_history;
     private HistoryAdapter historyAdapter;
-    Button btn_confirmOrder;
     ImageView goBack;
+    ArrayList<ObjectFood> mList_history;
 
     SQLiteDatabase sqLitedb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
     Cursor cursor = null;
@@ -42,11 +44,12 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
 
-        ObjectFood ob_food = new ObjectFood();
-        ArrayList<ObjectFood> mList_history = new ArrayList<ObjectFood>();
-        String sql = "SELECT * FROM tb_cart WHERE CART_STATUS = 2";
+        ArrayList<ObjectFood> item_history = new ArrayList<>();
+
+
+        String sql = "SELECT * FROM tb_cart where CART_STATUS = 2";
         cursor = sqLitedb.rawQuery(sql, null);
-        mList_history.clear();
+        item_history.clear();
         for(int i = 0; i < cursor.getCount(); i++){
             cursor.moveToPosition(i);
             int id = cursor.getInt(0);
@@ -54,14 +57,14 @@ public class HistoryActivity extends AppCompatActivity {
             String price = cursor.getString(2);
             int number =  cursor.getInt(3);
             byte[] image = cursor.getBlob(4);
-            mList_history.add(new ObjectFood(id, image, name, price, number));
+            item_history.add(new ObjectFood(id, image, name, price, number));
         }
 
-        //Hien thi list
         rcv_history = findViewById(R.id.history_rcv);
-        historyAdapter = new HistoryAdapter(mList_history);
-        rcv_history.setLayoutManager(new LinearLayoutManager(HistoryActivity.this, LinearLayoutManager.VERTICAL, false));
+        historyAdapter = new HistoryAdapter(item_history);
+        rcv_history.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rcv_history.setAdapter(historyAdapter);
+
 
 
         //Quay lai

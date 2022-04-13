@@ -23,7 +23,7 @@ public class DeliveryFragment extends Fragment {
     private RecyclerView rcv1_item;
     private DeliveryAdapter delivery_Adapter;
     SQLiteDatabase sqLitedb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
-    Cursor cursor = null, cursor1 = null;
+    Cursor cursor = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
