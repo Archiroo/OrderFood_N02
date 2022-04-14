@@ -1,5 +1,8 @@
 package com.example.orderfood.Adapter;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -7,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,10 +23,14 @@ import java.util.ArrayList;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHolder>{
 
     public ArrayList<ObjectFood> mList_Search;
+    public Context mcontext;
 
-    public SearchAdapter(ArrayList<ObjectFood> mList_Search) {
+    public SearchAdapter(Context context, ArrayList<ObjectFood> mList_Search) {
+        this.mcontext = context;
         this.mList_Search = mList_Search;
     }
+
+    SQLiteDatabase sqLitedb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
 
     @NonNull
     @Override
@@ -42,10 +50,24 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
         holder.imageFood.setImageBitmap(bitmap);
         holder.nameFood.setText(currentItem.getNameFood());
-        holder.priceFood.setText(currentItem.getNameFood());
-        holder.addCart.setText(currentItem.getDetailFood());
+        holder.priceFood.setText(currentItem.getPriceFood());
 
-
+        holder.addCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    ContentValues values = new ContentValues();
+                    values.put("cart_name", currentItem.getNameFood());
+                    values.put("cart_price", currentItem.getPriceFood());
+                    values.put("cart_image", currentItem.getImageFood());
+                    sqLitedb.insert("tb_cart", null, values);
+                    Toast.makeText(mcontext, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(mcontext, "Thêm vào giỏ hàng thất bại", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
