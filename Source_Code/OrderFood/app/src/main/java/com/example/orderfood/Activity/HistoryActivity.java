@@ -58,7 +58,7 @@ public class HistoryActivity extends AppCompatActivity {
             int number =  cursor.getInt(3);
             byte[] image = cursor.getBlob(4);
             item_history.add(new ObjectFood(id, image, name, price, number));
-        }
+       }
 
         rcv_history = findViewById(R.id.history_rcv);
         historyAdapter = new HistoryAdapter(item_history);
