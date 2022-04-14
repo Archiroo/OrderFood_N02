@@ -49,14 +49,16 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryH
         holder.history_nameFood.setText(currentItem.getNameFood());
         Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem.getImageFood(), 0, currentItem.getImageFood().length);
         holder.history_imageFood.setImageBitmap(bitmap);
-        holder.history_quantity.setText(currentItem.getNameFood());
-        holder.history_totalPrice.setText(currentItem.getNameFood());
-
+        holder.history_quantity.setText(String.valueOf(currentItem.getNumber()));
+        int number = currentItem.getNumber();
+        float price = Float.parseFloat(currentItem.getPriceFood());
+        float total = number*price;
+        holder.history_totalPrice.setText(String.valueOf(total));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mList_history.size();
     }
 
     public class HistoryHolder extends RecyclerView.ViewHolder{

@@ -31,7 +31,7 @@ public class HistoryActivity extends AppCompatActivity {
     private RecyclerView rcv_history;
     private HistoryAdapter historyAdapter;
     ImageView goBack;
-    ArrayList<ObjectFood> mList_history;
+
 
     SQLiteDatabase sqLitedb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.orderfood/databases/OrderFoodN02.sqlite", null);
     Cursor cursor = null;
@@ -43,13 +43,11 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-
-        ArrayList<ObjectFood> item_history = new ArrayList<>();
-
+        ArrayList<ObjectFood> mList_history = new ArrayList<>();
 
         String sql = "SELECT * FROM tb_cart where CART_STATUS = 2";
         cursor = sqLitedb.rawQuery(sql, null);
-        item_history.clear();
+        mList_history.clear();
         for(int i = 0; i < cursor.getCount(); i++){
             cursor.moveToPosition(i);
             int id = cursor.getInt(0);
@@ -57,11 +55,11 @@ public class HistoryActivity extends AppCompatActivity {
             String price = cursor.getString(2);
             int number =  cursor.getInt(3);
             byte[] image = cursor.getBlob(4);
-            item_history.add(new ObjectFood(id, image, name, price, number));
+            mList_history.add(new ObjectFood(id, image, name, price, number));
        }
 
         rcv_history = findViewById(R.id.history_rcv);
-        historyAdapter = new HistoryAdapter(item_history);
+        historyAdapter = new HistoryAdapter(mList_history);
         rcv_history.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rcv_history.setAdapter(historyAdapter);
 
