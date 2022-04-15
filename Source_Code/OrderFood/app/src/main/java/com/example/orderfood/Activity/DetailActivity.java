@@ -53,6 +53,9 @@ public class DetailActivity extends AppCompatActivity {
         TextView detailFood = findViewById(R.id.detail_imageDetail);
         detailFood.setText(item_rcv3.getDetailFood());
 
+        TextView priceFood = findViewById(R.id.detail_moneyDetail);
+        priceFood.setText(item_rcv3.getPriceFood());
+
         btn_goBack = findViewById(R.id.ic_back);
         btn_goBack.setOnClickListener(new View.OnClickListener() {
             @Override
