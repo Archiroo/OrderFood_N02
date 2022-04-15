@@ -91,6 +91,7 @@ public class HomeRCV3Adapter extends RecyclerView.Adapter<HomeRCV3Adapter.HomeRe
         public ImageView rcv3_image;
         public TextView rcv3_name;
         public TextView rcv3_details;
+        public TextView rcv3_price;
         public ConstraintLayout rcv3_layout;
 
         public HomeRecyclerView3Holder(@NonNull View itemView) {

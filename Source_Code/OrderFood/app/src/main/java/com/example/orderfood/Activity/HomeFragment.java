@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment implements ChangeItemRCV3 {
 
         //Recycleview 2
         ArrayList<ObjectFood> item_rcv2 = new ArrayList<>();
-        String sql = "SELECT * FROM tb_food";
+        String sql = "SELECT * FROM tb_food LIMIT 5";
         cursor = db_orderFood.rawQuery(sql, null);
         item_rcv2.clear();
         for(int i = 0; i < cursor.getCount(); i++){

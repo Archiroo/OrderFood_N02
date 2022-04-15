@@ -37,7 +37,6 @@ public class AdminActivity extends AppCompatActivity {
     private TextView nameFood;
     private TextView detailFood;
     private TextView addFood;
-    private TextView updateFood;
     private TextView priceFood;
     private TextView btn_logout;
     final int CHOOSE_IMAGE = 307;
@@ -66,7 +65,6 @@ public class AdminActivity extends AppCompatActivity {
         nameFood = findViewById(R.id.admin_nameFood);
         detailFood = findViewById(R.id.admin_detailFood);
         addFood = findViewById(R.id.btn_addFood);
-        updateFood = findViewById(R.id.btn_updateFood);
         priceFood = findViewById(R.id.admin_priceFood);
         btn_logout = findViewById(R.id.admin_logout);
 

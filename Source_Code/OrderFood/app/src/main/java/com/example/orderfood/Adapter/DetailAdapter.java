@@ -55,7 +55,7 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailRecy
         Bitmap bitmap = BitmapFactory.decodeByteArray(currentItem_detail.getImageFood(), 0, currentItem_detail.getImageFood().length);
         holder.detail_image.setImageBitmap(bitmap);
         holder.detail_name.setText(currentItem_detail.getNameFood());
-        holder.detail_detail.setText(currentItem_detail.getNameFood());
+        holder.detail_detail.setText(currentItem_detail.getPriceFood());
         holder.detail_price.setText(currentItem_detail.getDetailFood());
 
         holder.detail_btnAdd.setOnClickListener(new View.OnClickListener() {

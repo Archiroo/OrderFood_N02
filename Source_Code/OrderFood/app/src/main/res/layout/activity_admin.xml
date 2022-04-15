@@ -99,26 +99,6 @@
         app:layout_constraintTop_toBottomOf="@+id/admin_priceFood"
         app:layout_constraintVertical_bias="0" />
 
-    <TextView
-        android:id="@+id/btn_updateFood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_admin"
-        android:fontFamily="sans-serif"
-        android:paddingStart="20dp"
-        android:paddingTop="15dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="15dp"
-        android:text="Cập nhật món ăn"
-        android:textColor="#F3ECEC"
-        android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="1"
-        android:layout_marginRight="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_addFood"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_addFood"
-        app:layout_constraintTop_toTopOf="@+id/btn_addFood" />
 
     <TextView
         android:id="@+id/textView"
@@ -167,7 +147,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_updateFood"
+        app:layout_constraintEnd_toEndOf="@+id/admin_priceFood"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/admin_rcv"

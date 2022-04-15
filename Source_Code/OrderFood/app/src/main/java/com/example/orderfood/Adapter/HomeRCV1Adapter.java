@@ -156,7 +156,7 @@ public class HomeRCV1Adapter extends RecyclerView.Adapter<HomeRCV1Adapter.HomeRe
 
                 else if(position==5){
                     ArrayList<ObjectFood> mList_rcv3 = new ArrayList<ObjectFood>();
-                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%combo%'";
+                    String sql = "SELECT * FROM tb_food WHERE food_name LIKE '%combo%' OR food_detail LIKE '%combo%'";
                     cursor = db.rawQuery(sql, null);
                     mList_rcv3.clear();
                     for(int i = 0; i < cursor.getCount(); i++){

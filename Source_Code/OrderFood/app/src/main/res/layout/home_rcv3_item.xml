@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/home_rcv3_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:src="@drawable/cat1"
         android:elevation="20dp"
         android:layout_marginRight="10dp"
@@ -22,6 +22,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="90dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/home_rcv3_background"
         android:elevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
