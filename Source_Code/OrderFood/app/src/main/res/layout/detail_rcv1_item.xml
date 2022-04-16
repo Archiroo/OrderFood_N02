@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/detail_layout_rcv"
@@ -12,6 +12,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/detail_itemselect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +24,7 @@
         <TextView
             android:id="@+id/btn_addCart"
             android:layout_width="100dp"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:background="@drawable/addcard_background"
             android:gravity="center"
             android:text="Thêm vào giỏ hàng"
@@ -110,4 +111,4 @@
             app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

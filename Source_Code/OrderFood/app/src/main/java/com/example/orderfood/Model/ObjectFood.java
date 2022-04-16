@@ -68,6 +68,13 @@ public class ObjectFood implements Serializable {
         this.imageFood = imageFood;
         this.nameFood = nameFood;
         this.priceFood = priceFood;
+
+    }public ObjectFood(int id, byte[] imageFood, String nameFood, String priceFood, String detailFood) {
+        this.id = id;
+        this.imageFood = imageFood;
+        this.nameFood = nameFood;
+        this.priceFood = priceFood;
+        this.detailFood = detailFood;
     }
 
     public ObjectFood(int id, byte[] imageFood, String nameFood, String priceFood, int number) {

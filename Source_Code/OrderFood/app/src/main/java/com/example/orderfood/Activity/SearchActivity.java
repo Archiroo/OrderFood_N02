@@ -50,8 +50,9 @@ public class SearchActivity extends AppCompatActivity {
             int id = cursor.getInt(0);
             String name = cursor.getString(1);
             String price = cursor.getString(2);
+            String detail = cursor.getString(3);
             byte[] image = cursor.getBlob(4);
-            mListSearch.add(new ObjectFood(id, image, name, price));
+            mListSearch.add(new ObjectFood(id, image, name, price, detail));
         }
 
         rcv_searchItem = findViewById(R.id.rcv_searchItem);

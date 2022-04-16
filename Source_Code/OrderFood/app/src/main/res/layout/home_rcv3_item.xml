@@ -73,7 +73,6 @@
             app:layout_constraintStart_toStartOf="@+id/home_rcv3_details"
             app:layout_constraintTop_toBottomOf="@+id/home_rcv3_details"/>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,6 +51,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         holder.imageFood.setImageBitmap(bitmap);
         holder.nameFood.setText(currentItem.getNameFood());
         holder.priceFood.setText(currentItem.getPriceFood());
+        holder.detail.setText(currentItem.getDetailFood());
 
         holder.addCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,13 +88,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
 
         private TextView addCart;
 
+        private TextView detail;
         public SearchHolder(@NonNull View itemView) {
             super(itemView);
 
             imageFood = itemView.findViewById(R.id.detail_itemImage);
             nameFood = itemView.findViewById(R.id.detail_itemNameFood);
-            priceFood = itemView.findViewById(R.id.detail_money);
+            priceFood = itemView.findViewById(R.id.detail_itemDetail);
             addCart = itemView.findViewById(R.id.btn_addCart);
+            detail = itemView.findViewById(R.id.detail_money);
         }
     }
 }
