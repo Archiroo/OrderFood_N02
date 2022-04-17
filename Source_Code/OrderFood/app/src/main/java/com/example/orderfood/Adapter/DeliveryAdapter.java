@@ -64,8 +64,8 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.Delive
         holder.btn_danhGia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String sql = "CART_ID = "+ currentItem.getId()+"";
-                sqlitedb.delete("tb_cart", sql, null);
+                String index = "CART_ID = "+ currentItem.getId()+"";
+                sqlitedb.delete("tb_cart", index, null);
                 Toast.makeText(mcontex,"Cảm ơn bạn đã đặt hàng!", Toast.LENGTH_SHORT).show();
             }
         });
